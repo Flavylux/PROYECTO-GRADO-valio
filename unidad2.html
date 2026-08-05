@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base href="/" />
+  <title>Unidad 2 - Aplicación</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="background-glow glow-one"></div>
+  <div class="background-glow glow-two"></div>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" role="img" aria-label="Marca personal">
+            <rect x="6" y="6" width="52" height="52" rx="16" fill="#0f172a" opacity="0.25"></rect>
+            <path d="M22 24c0-8 6-14 14-14 8 0 14 6 14 14 0 6-4 12-10 14l-4 2-4-2c-6-2-10-8-10-14z" fill="#f8fafc"></path>
+            <path d="M20 32c0-8 6-14 14-14" stroke="#6ee7f9" stroke-width="3" fill="none" stroke-linecap="round"></path>
+            <path d="M44 32c0-8-6-14-14-14" stroke="#8b5cf6" stroke-width="3" fill="none" stroke-linecap="round"></path>
+            <path d="M24 38c0 6 4 10 10 10 6 0 10-4 10-10" stroke="#0f172a" stroke-width="3" fill="none" stroke-linecap="round"></path>
+          </svg>
+        </span>
+        <span class="brand-text">Andrés Dev</span>
+      </a>
+      <nav class="nav" aria-label="Navegación secundaria">
+        <a class="nav-link" href="index.html">Inicio</a>
+        <a class="nav-link" href="unidad1.html">Unidad 1</a>
+        <a class="nav-link" href="unidad2.html">Unidad 2</a>
+        <a class="nav-link" href="unidad3.html">Unidad 3</a>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero-content reveal">
+          <p class="eyebrow">Unidad 2 • Aplicación</p>
+          <h1>Poner en práctica lo aprendido</h1>
+          <p>
+            Esta unidad se enfoca en llevar los conceptos a situaciones reales, fortaleciendo la comprensión mediante la práctica y la reflexión.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="index.html">Volver al inicio</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-card reveal unit-index">
+        <p class="eyebrow">Índice de unidades</p>
+        <h2>Encuentra el hilo del curso</h2>
+        <div class="unit-index-grid">
+          <a class="unit-index-card" href="unidad1.html">
+            <span class="unit-index-number">01</span>
+            <div>
+              <h3>Unidad 1</h3>
+              <p>Conceptos básicos</p>
+            </div>
+          </a>
+          <a class="unit-index-card active" href="unidad2.html">
+            <span class="unit-index-number">02</span>
+            <div>
+              <h3>Unidad 2</h3>
+              <p>Aplicación práctica</p>
+            </div>
+          </a>
+          <a class="unit-index-card" href="unidad3.html">
+            <span class="unit-index-number">03</span>
+            <div>
+              <h3>Unidad 3</h3>
+              <p>Integración y resultados</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="content-card reveal activity-card">
+        <p class="eyebrow">Dinámica breve</p>
+        <h2>Mini reto de aplicación</h2>
+        <p>Selecciona la opción que mejor representa aplicar un concepto de forma útil:</p>
+        <div class="activity-options" role="group" aria-label="Opciones de respuesta">
+          <button class="activity-option" data-correct="false">Esperar a que alguien lo haga por ti</button>
+          <button class="activity-option" data-correct="true">Resolver un problema con pasos claros</button>
+          <button class="activity-option" data-correct="false">Evitar practicar</button>
+        </div>
+        <p id="activity-feedback-2" class="quiz-feedback">Elige una respuesta.</p>
+      </section>
+
+      <section class="content-card reveal">
+        <h2>Enfoque principal</h2>
+        <p>
+          Aquí se consolida el aprendizaje a través de ejercicios, ejemplos y ejercicios de análisis. La idea es que cada concepto se vuelva útil y tangible.
+        </p>
+        <ul>
+          <li>Aplicación práctica de ideas</li>
+          <li>Desarrollo de habilidades</li>
+          <li>Resolución de problemas</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+  <footer class="footer">
+    <p>© <span id="year"></span> Andrés Plazarte</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
