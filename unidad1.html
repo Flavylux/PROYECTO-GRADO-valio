@@ -73,12 +73,6 @@
         </div>
       </section>
 
-      <section class="content-card reveal trivia-hub" data-unit="unidad1">
-        <p class="eyebrow">Juego de trivia</p>
-        <h2>Reto rápido de la Unidad 1</h2>
-        <div class="trivia-game"></div>
-      </section>
-
       <section class="content-card reveal feature-panel tone-cyan flow-left">
         <h2 data-icon="📘">1. Contexto Histórico y los Pioneros de la Computación</h2>
         <figure class="topic-visual">
@@ -237,8 +231,19 @@
           <li><strong>Sistemas contemporáneos:</strong> GNU/Linux, Windows, macOS, iOS y Android, con fuerte integración en nube.</li>
         </ul>
       </section>
+
+      <section class="content-card reveal trivia-hub" data-unit="unidad1" data-trivia-locked="true">
+        <p class="eyebrow">Juego de trivia</p>
+        <h2>Reto rápido de la Unidad 1</h2>
+        <div class="trivia-lock-overlay">
+          <span class="trivia-lock-icon" aria-hidden="true">🔒</span>
+          <p class="trivia-lock-msg">Lee toda la información de la unidad para desbloquear la trivia.</p>
+        </div>
+        <div class="trivia-game"></div>
+      </section>
     </main>
   </div>
+  <div class="reading-progress-bar" id="reading-progress" role="progressbar" aria-label="Progreso de lectura" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
   <footer class="footer">
     <p>© <span id="year"></span> Andrés Plazarte</p>
   </footer>
