@@ -73,12 +73,6 @@
         </div>
       </section>
 
-      <section class="content-card reveal trivia-hub" data-unit="unidad3">
-        <p class="eyebrow">Juego de trivia</p>
-        <h2>Reto rápido de la Unidad 3</h2>
-        <div class="trivia-game"></div>
-      </section>
-
       <section class="content-card reveal feature-panel flow-left">
         <h2 data-icon="🔢">1. Sistemas de Numeración y Código Binario</h2>
         <figure class="topic-visual">
@@ -275,8 +269,19 @@ FinAlgoritmo</code></pre>
           <li><strong>Generacion de diagramas:</strong> conversion entre pseudocodigo y diagrama de flujo.</li>
         </ol>
       </section>
+
+      <section class="content-card reveal trivia-hub" data-unit="unidad3" data-trivia-locked="true">
+        <p class="eyebrow">Juego de trivia</p>
+        <h2>Reto rápido de la Unidad 3</h2>
+        <div class="trivia-lock-overlay">
+          <span class="trivia-lock-icon" aria-hidden="true">🔒</span>
+          <p class="trivia-lock-msg">Lee toda la información de la unidad para desbloquear la trivia.</p>
+        </div>
+        <div class="trivia-game"></div>
+      </section>
     </main>
   </div>
+  <div class="reading-progress-bar" id="reading-progress" role="progressbar" aria-label="Progreso de lectura" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
   <footer class="footer">
     <p>© <span id="year"></span> Andrés Plazarte</p>
   </footer>

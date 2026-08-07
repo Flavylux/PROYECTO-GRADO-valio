@@ -567,6 +567,56 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const form = document.getElementById("contact-form");
+
+  // ── Reading Progress Bar ───────────────────────────────────
+  const readingBar = document.getElementById("reading-progress");
+  if (readingBar) {
+    const updateProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? Math.min(100, (scrollTop / docHeight) * 100) : 0;
+      readingBar.style.width = `${pct}%`;
+      readingBar.setAttribute("aria-valuenow", String(Math.round(pct)));
+    };
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    updateProgress();
+  }
+
+  // ── Trivia Unlock after reading all content ─────────────────
+  const triviaLockedHubs = document.querySelectorAll(".trivia-hub[data-trivia-locked]");
+  triviaLockedHubs.forEach((hub) => {
+    hub.classList.add("trivia-locked");
+
+    const contentPanels = document.querySelectorAll(".feature-panel");
+    if (!contentPanels.length) {
+      hub.classList.remove("trivia-locked");
+      hub.classList.add("trivia-unlocked");
+      return;
+    }
+
+    const lastPanel = contentPanels[contentPanels.length - 1];
+    const unlockObserver = new IntersectionObserver((entries) => {
+      let shouldUnlock = false;
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) shouldUnlock = true;
+      });
+      if (!shouldUnlock || hub.classList.contains("trivia-unlocked")) return;
+
+      hub.classList.remove("trivia-locked");
+      hub.classList.add("trivia-unlocked");
+
+      const banner = document.createElement("div");
+      banner.className = "trivia-unlock-banner";
+      banner.innerHTML = `<span aria-hidden="true">🎉</span> ¡Contenido completado! La trivia está desbloqueada.`;
+      const triviaGame = hub.querySelector(".trivia-game");
+      if (triviaGame) triviaGame.before(banner);
+
+      unlockObserver.disconnect();
+    }, { threshold: 0.5 });
+
+    unlockObserver.observe(lastPanel);
+  });
+
   const formMessage = document.getElementById("form-message");
   if (form && formMessage) {
     form.addEventListener("submit", async (event) => {
