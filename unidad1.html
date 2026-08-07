@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <base href="/" />
   <title>Unidad 1 - Fundamentos</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -73,17 +72,23 @@
         </div>
       </section>
 
-      <section class="content-card reveal trivia-hub" data-unit="unidad1">
-        <p class="eyebrow">Juego de trivia</p>
-        <h2>Reto rápido de la Unidad 1</h2>
-        <div class="trivia-game"></div>
+      <section class="content-card reveal topic-index">
+        <p class="eyebrow">Índice interno</p>
+        <h2>Temas de la Unidad 1</h2>
+        <div class="topic-index-links">
+          <a class="topic-index-link" href="#u1-tema1">1. Contexto histórico y pioneros</a>
+          <a class="topic-index-link" href="#u1-tema2">2. Generaciones de computadoras</a>
+          <a class="topic-index-link" href="#u1-tema3">3. Avances e impacto socioeconómico</a>
+          <a class="topic-index-link" href="#u1-tema4">4. Sistemas operativos</a>
+        </div>
       </section>
 
-      <section class="content-card reveal feature-panel tone-cyan flow-left">
+      <section class="content-card reveal feature-panel tone-cyan flow-left" id="u1-tema1">
         <h2 data-icon="📘">1. Contexto Histórico y los Pioneros de la Computación</h2>
-        <figure class="topic-visual">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKfrWmMA9izOeTIkxTKrjK87MzHar868qFTFTWeW5bHg&s" alt="Línea histórica de la computación" loading="lazy" decoding="async" />
-          <figcaption>Orígenes mecánicos y primeros saltos conceptuales.</figcaption>
+        <figure class="topic-visual topic-visual-split">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKfrWmMA9izOeTIkxTKrjK87MzHar868qFTFTWeW5bHg&s" alt="Alan Turing, padre de la computación teórica" loading="lazy" decoding="async" />
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPUZJ-VWrK9B9JHAVICsNuB7qgivGlZJLQNov1FI-iMsF3Je0RWu7TVD-g&s=10" alt="Ada Lovelace, primera programadora de la historia" loading="lazy" decoding="async" />
+          <figcaption>Alan Turing y Ada Lovelace, dos pioneros clave de la computación.</figcaption>
         </figure>
         <p>
           La historia de la programación y la informática no comienza con la invención de los chips de silicio o las pantallas digitales, sino con la constante necesidad humana de automatizar cálculos complejos, procesar información y crear mecanismos capaces de ejecutar instrucciones sin intervención manual directa.
@@ -117,12 +122,8 @@
         </ul>
       </section>
 
-      <section class="content-card reveal feature-panel tone-amber flow-right">
+      <section class="content-card reveal feature-panel tone-amber flow-right" id="u1-tema2">
         <h2 data-icon="🖥️">2. Las Generaciones de Computadoras</h2>
-        <figure class="topic-visual">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPUZJ-VWrK9B9JHAVICsNuB7qgivGlZJLQNov1FI-iMsF3Je0RWu7TVD-g&s=10" alt="Evolución del hardware en generaciones" loading="lazy" decoding="async" />
-          <figcaption>Del tubo al vacío al microprocesador moderno.</figcaption>
-        </figure>
         <p>
           La evolución del hardware informático se divide tradicionalmente en generaciones caracterizadas por cambios tecnológicos fundamentales en sus componentes electrónicos, con aumentos de velocidad y reducción de tamaño y costos.
         </p>
@@ -168,7 +169,7 @@
         </ul>
       </section>
 
-      <section class="content-card reveal feature-panel tone-violet flow-left">
+      <section class="content-card reveal feature-panel tone-violet flow-left" id="u1-tema3">
         <h2 data-icon="🌐">3. Avances Tecnológicos e Impacto Socioeconómico</h2>
         <figure class="topic-visual">
           <img src="https://media.revistagq.com/photos/5eb3ec929be70fabcbaccccf/16:9/w_1280,c_limit/steve-jobs-bill-gates.png" alt="Liderazgo tecnológico y revolución digital" loading="lazy" decoding="async" />
@@ -192,11 +193,11 @@
         </ul>
       </section>
 
-      <section class="content-card reveal feature-panel tone-emerald flow-right">
+      <section class="content-card reveal feature-panel tone-emerald flow-right" id="u1-tema4">
         <h2 data-icon="⚙️">4. Sistemas Operativos: Conceptos, Evolución y Arquitectura</h2>
         <figure class="topic-visual">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGU9wLFn2EFpru1I_Hs3jomSKNjtRjFzpQtjPttvpB8ZWmGz7XP9FOfw8&s=10" alt="Arquitectura de sistemas operativos" loading="lazy" decoding="async" />
-          <figcaption>Interfaz entre aplicaciones y hardware físico.</figcaption>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUKzG9CqsC9QnSnHatWE512iaH7_S0YXGOmZtVuEhWYA&s=10" alt="Logos de los principales sistemas operativos" loading="lazy" decoding="async" />
+          <figcaption>Windows, macOS, Linux, iOS y Android como sistemas operativos actuales.</figcaption>
         </figure>
         <p>
           Un Sistema Operativo (SO) es el software fundamental de un sistema informático. Actúa como capa intermedia de abstracción e interfaz entre el hardware físico y los programas de aplicación.
@@ -236,6 +237,12 @@
           <li><strong>Software libre y open source:</strong> Linux (1991) y ecosistema GNU como base de servidores y supercomputación.</li>
           <li><strong>Sistemas contemporáneos:</strong> GNU/Linux, Windows, macOS, iOS y Android, con fuerte integración en nube.</li>
         </ul>
+      </section>
+
+      <section class="content-card reveal trivia-hub" data-unit="unidad1">
+        <p class="eyebrow">Juego de trivia</p>
+        <h2>Reto rápido de la Unidad 1</h2>
+        <div class="trivia-game"></div>
       </section>
     </main>
   </div>

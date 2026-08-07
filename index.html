@@ -49,28 +49,8 @@
         </div>
 
         <div class="hero-visual reveal">
-          <div class="avatar-card" aria-label="Ilustración de un cactus fuerte y estilizado">
-            <svg viewBox="0 0 220 220" role="img" aria-label="Cactus estilizado">
-              <rect width="220" height="220" rx="110" fill="#f6ecd8"></rect>
-              <circle cx="110" cy="110" r="84" fill="#fffdf7"></circle>
-              <path d="M108 54c-16 0-28 12-28 28 0 12 8 22 18 26v18h20V108c10-4 18-14 18-26 0-16-12-28-28-28z" fill="#2e7d32"></path>
-              <path d="M82 76c0-10 6-16 14-20" stroke="#1b5e20" stroke-width="5" fill="none" stroke-linecap="round"></path>
-              <path d="M138 76c0-10-6-16-14-20" stroke="#1b5e20" stroke-width="5" fill="none" stroke-linecap="round"></path>
-              <path d="M90 92c0-10 10-18 18-18 8 0 18 8 18 18" stroke="#1b5e20" stroke-width="5" fill="none" stroke-linecap="round"></path>
-              <path d="M86 108c0 12 8 22 22 22s22-10 22-22" stroke="#1b5e20" stroke-width="5" fill="none" stroke-linecap="round"></path>
-              <path d="M94 130c0 10 6 18 14 18 8 0 14-8 14-18" stroke="#1b5e20" stroke-width="5" fill="none" stroke-linecap="round"></path>
-              <path d="M90 152c0 10 8 14 20 14 12 0 20-4 20-14" stroke="#1b5e20" stroke-width="5" fill="none" stroke-linecap="round"></path>
-              <path d="M96 60c0-10 8-16 12-16 4 0 12 6 12 16" stroke="#4caf50" stroke-width="4" fill="none" stroke-linecap="round"></path>
-              <path d="M90 82c-8 0-14 6-14 14" stroke="#4caf50" stroke-width="4" fill="none" stroke-linecap="round"></path>
-              <path d="M130 82c8 0 14 6 14 14" stroke="#4caf50" stroke-width="4" fill="none" stroke-linecap="round"></path>
-              <path d="M82 116c-8 4-12 10-12 18" stroke="#4caf50" stroke-width="4" fill="none" stroke-linecap="round"></path>
-              <path d="M138 116c8 4 12 10 12 18" stroke="#4caf50" stroke-width="4" fill="none" stroke-linecap="round"></path>
-              <path d="M98 44l-12-12" stroke="#2e7d32" stroke-width="5" fill="none" stroke-linecap="round"></path>
-              <path d="M122 44l12-12" stroke="#2e7d32" stroke-width="5" fill="none" stroke-linecap="round"></path>
-              <circle cx="100" cy="92" r="4" fill="#fffdf7"></circle>
-              <circle cx="120" cy="92" r="4" fill="#fffdf7"></circle>
-              <path d="M100 100c4 4 8 6 12 6 4 0 8-2 12-6" stroke="#fffdf7" stroke-width="3" fill="none" stroke-linecap="round"></path>
-            </svg>
+          <div class="avatar-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOSFZTrYif_3lTbyaTUXWsUJuO6u750S1NuByO_VCTJQ&s=10" alt="Imagen destacada del perfil" loading="lazy" decoding="async" />
           </div>
         </div>
       </section>
@@ -80,7 +60,10 @@
         <h2>Sobre Mí</h2>
         <div class="profile-grid">
           <ul class="profile-list" aria-label="Datos del estudiante">
-            <li><strong>Institución Educativa:</strong> Universidad Técnica de Cotopaxi (UTC)</li>
+            <li class="profile-institution">
+              <img class="institution-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStijiB-IrT4kotmqccjpFR5EHhAQ82R6SQL1ZKmNwMWg&s=10" alt="Logo de la Universidad Técnica de Cotopaxi" loading="lazy" decoding="async" />
+              <span><strong>Institución Educativa:</strong> Universidad Técnica de Cotopaxi (UTC)</span>
+            </li>
             <li><strong>Carrera:</strong> Ingeniería en Software</li>
             <li><strong>Ubicación:</strong> Cotopaxi, Ecuador</li>
           </ul>
@@ -106,6 +89,8 @@
         <p>
           Resumen estructurado del semestre con enfoque en fundamentos teóricos, lógica computacional y programación estructurada.
         </p>
+
+        <section class="progress-overview" id="progress-overview" aria-live="polite"></section>
 
         <div class="units-grid academic-grid" id="units-container" aria-live="polite"></div>
       </section>

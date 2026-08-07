@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <base href="/" />
   <title>Unidad 2 - Aplicación</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -73,17 +72,23 @@
         </div>
       </section>
 
-      <section class="content-card reveal trivia-hub" data-unit="unidad2">
-        <p class="eyebrow">Juego de trivia</p>
-        <h2>Reto rápido de la Unidad 2</h2>
-        <div class="trivia-game"></div>
+      <section class="content-card reveal topic-index">
+        <p class="eyebrow">Índice interno</p>
+        <h2>Temas de la Unidad 2</h2>
+        <div class="topic-index-links">
+          <a class="topic-index-link" href="#u2-tema1">1. Contexto histórico y pioneros</a>
+          <a class="topic-index-link" href="#u2-tema2">2. Generaciones de computadoras</a>
+          <a class="topic-index-link" href="#u2-tema3">3. Avances e impacto socioeconómico</a>
+          <a class="topic-index-link" href="#u2-tema4">4. Sistemas operativos</a>
+        </div>
       </section>
 
-      <section class="content-card reveal feature-panel cavern-panel cavern-panel-cyan flow-left">
+      <section class="content-card reveal feature-panel cavern-panel cavern-panel-cyan flow-left" id="u2-tema1">
         <h2 data-icon="📘">1. Contexto Histórico y los Pioneros de la Computación</h2>
-        <figure class="topic-visual">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTax_lc0vYZyqKGktXT5zf3BS_qFFt-vcwR0Ki-y-YOavmMyefg9wpbxb7q&s=10" alt="Panorama histórico de la computación" loading="lazy" decoding="async" />
-          <figcaption>Fundamentos históricos para entender la computación moderna.</figcaption>
+        <figure class="topic-visual topic-visual-split">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKfrWmMA9izOeTIkxTKrjK87MzHar868qFTFTWeW5bHg&s" alt="Alan Turing, padre de la computación teórica" loading="lazy" decoding="async" />
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPUZJ-VWrK9B9JHAVICsNuB7qgivGlZJLQNov1FI-iMsF3Je0RWu7TVD-g&s=10" alt="Ada Lovelace, primera programadora de la historia" loading="lazy" decoding="async" />
+          <figcaption>Alan Turing y Ada Lovelace, dos pioneros clave de la computación.</figcaption>
         </figure>
         <p>
           La historia de la programación y la informática no comienza con la invención de los chips de silicio o las pantallas digitales, sino con la constante necesidad humana de automatizar cálculos complejos, procesar información y crear mecanismos capaces de ejecutar instrucciones sin intervención manual directa.
@@ -120,13 +125,8 @@
         </ul>
       </section>
 
-      <section class="content-card reveal feature-panel cavern-panel cavern-panel-amber flow-right">
+      <section class="content-card reveal feature-panel cavern-panel cavern-panel-amber flow-right" id="u2-tema2">
         <h2 data-icon="🖥️">2. Las Generaciones de Computadoras</h2>
-        <figure class="topic-visual topic-visual-split">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUKzG9CqsC9QnSnHatWE512iaH7_S0YXGOmZtVuEhWYA&s=10" alt="Evolución de computadoras" loading="lazy" decoding="async" />
-          <img src="https://www.shutterstock.com/shutterstock/photos/2472116719/display_1500/stock-photo-number-systems-binary-decimal-octal-hexadecimal-2472116719.jpg" alt="Sistemas numéricos digitales" loading="lazy" decoding="async" />
-          <figcaption>Cambio tecnológico de generaciones y representación numérica.</figcaption>
-        </figure>
         <p>
           La evolución del hardware informático se divide en generaciones definidas por cambios tecnológicos en sus componentes, con aumentos de velocidad y disminución de tamaño y costos.
         </p>
@@ -173,12 +173,11 @@
         </ul>
       </section>
 
-      <section class="content-card reveal feature-panel cavern-panel cavern-panel-violet flow-left">
+      <section class="content-card reveal feature-panel cavern-panel cavern-panel-violet flow-left" id="u2-tema3">
         <h2 data-icon="🌐">3. Avances Tecnológicos e Impacto Socioeconómico</h2>
-        <figure class="topic-visual topic-visual-split">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiUt67nqQ6aSUOGtLUzNoFDpZWTPtbOpjevMVOAFRpYA&s=10" alt="Impacto tecnológico" loading="lazy" decoding="async" />
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwp4ffMqmmNN6_khbm5IksuFmcqRta3dAo7dj5CehRVg&s=10" alt="Transformación digital" loading="lazy" decoding="async" />
-          <figcaption>La tecnología como motor social, educativo y económico.</figcaption>
+        <figure class="topic-visual">
+          <img src="https://media.revistagq.com/photos/5eb3ec929be70fabcbaccccf/16:9/w_1280,c_limit/steve-jobs-bill-gates.png" alt="Liderazgo tecnológico y revolución digital" loading="lazy" decoding="async" />
+          <figcaption>La computación personal y su impacto global.</figcaption>
         </figure>
         <p>
           El desarrollo de hardware y software ha transformado industria, educación, ciencia y relaciones humanas.
@@ -198,11 +197,11 @@
         </ul>
       </section>
 
-      <section class="content-card reveal feature-panel cavern-panel cavern-panel-emerald flow-right">
+      <section class="content-card reveal feature-panel cavern-panel cavern-panel-emerald flow-right" id="u2-tema4">
         <h2 data-icon="⚙️">4. Sistemas Operativos: Conceptos, Evolución y Arquitectura</h2>
         <figure class="topic-visual">
-          <img src="https://static.wixstatic.com/media/cae29b_605ea6fe171145e18a417e5965172462~mv2.webp/v1/fill/w_519,h_541,al_c,lg_1,q_80,enc_avif,quality_auto/cae29b_605ea6fe171145e18a417e5965172462~mv2.webp" alt="Diagrama de flujo y arquitectura lógica" loading="lazy" decoding="async" />
-          <figcaption>Relación entre capas del sistema operativo y ejecución de procesos.</figcaption>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUKzG9CqsC9QnSnHatWE512iaH7_S0YXGOmZtVuEhWYA&s=10" alt="Logos de los principales sistemas operativos" loading="lazy" decoding="async" />
+          <figcaption>Windows, macOS, Linux, iOS y Android como sistemas operativos actuales.</figcaption>
         </figure>
         <p>
           Un Sistema Operativo (SO) es el software fundamental de un sistema informático. Actúa como capa de abstracción entre hardware y aplicaciones de usuario.
@@ -242,6 +241,12 @@
           <li><strong>Movimiento open source:</strong> Linux y GNU como base robusta y flexible para múltiples entornos.</li>
           <li><strong>Sistemas contemporáneos:</strong> GNU/Linux, Windows, macOS, iOS y Android en arquitecturas modernas y nube.</li>
         </ul>
+      </section>
+
+      <section class="content-card reveal trivia-hub" data-unit="unidad2">
+        <p class="eyebrow">Juego de trivia</p>
+        <h2>Reto rápido de la Unidad 2</h2>
+        <div class="trivia-game"></div>
       </section>
     </main>
   </div>

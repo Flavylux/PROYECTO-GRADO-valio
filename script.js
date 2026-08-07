@@ -8,6 +8,81 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const isValidImageUrl = (url) => typeof url === "string" && url.startsWith("http") && !url.includes("REEMPLAZAR-URL");
 
+  const SETTINGS_STORAGE_KEY = "utc-site-settings-v1";
+  const loadSettings = () => {
+    try {
+      const raw = localStorage.getItem(SETTINGS_STORAGE_KEY);
+      return raw ? JSON.parse(raw) : {};
+    } catch {
+      return {};
+    }
+  };
+  const saveSettings = (settings) => {
+    localStorage.setItem(SETTINGS_STORAGE_KEY, JSON.stringify(settings));
+  };
+  const siteSettings = {
+    soundEnabled: loadSettings().soundEnabled ?? true
+  };
+
+  const playSuccessTone = () => {
+    if (!siteSettings.soundEnabled) return;
+    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+    if (!AudioCtx) return;
+
+    const ctx = new AudioCtx();
+    const now = ctx.currentTime;
+    const notes = [523.25, 659.25, 783.99];
+
+    notes.forEach((freq, idx) => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+
+      osc.type = "triangle";
+      osc.frequency.value = freq;
+      gain.gain.setValueAtTime(0.0001, now + idx * 0.07);
+      gain.gain.exponentialRampToValueAtTime(0.08, now + idx * 0.07 + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + idx * 0.07 + 0.12);
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start(now + idx * 0.07);
+      osc.stop(now + idx * 0.07 + 0.13);
+    });
+
+    window.setTimeout(() => ctx.close(), 450);
+  };
+
+  const triggerSuccessEffect = (anchorElement) => {
+    const burst = document.createElement("div");
+    burst.className = "trivia-success-burst";
+
+    const centerX = window.innerWidth * 0.5;
+    const centerY = window.innerHeight * 0.38;
+    const sparkCount = 22;
+
+    for (let i = 0; i < sparkCount; i += 1) {
+      const spark = document.createElement("span");
+      spark.className = "trivia-spark";
+      const angle = (Math.PI * 2 * i) / sparkCount;
+      const radius = 90 + Math.random() * 120;
+      const dx = Math.cos(angle) * radius;
+      const dy = Math.sin(angle) * radius;
+      spark.style.left = `${centerX}px`;
+      spark.style.top = `${centerY}px`;
+      spark.style.setProperty("--dx", `${dx}px`);
+      spark.style.setProperty("--dy", `${dy}px`);
+      burst.appendChild(spark);
+    }
+
+    document.body.appendChild(burst);
+    window.setTimeout(() => burst.remove(), 950);
+
+    if (anchorElement instanceof HTMLElement) {
+      anchorElement.classList.add("success-flash");
+      window.setTimeout(() => anchorElement.classList.remove("success-flash"), 620);
+    }
+  };
+
   const unitsData = [
     {
       id: "unidad1",
@@ -161,6 +236,37 @@ document.addEventListener("DOMContentLoaded", () => {
     sections.forEach((section) => observer.observe(section));
   }
 
+  const topicLinks = Array.from(document.querySelectorAll(".topic-index-link"));
+  if (topicLinks.length) {
+    const topicMap = topicLinks
+      .map((link) => {
+        const href = link.getAttribute("href") || "";
+        const targetId = href.startsWith("#") ? href.slice(1) : "";
+        const target = targetId ? document.getElementById(targetId) : null;
+        return { link, targetId, target };
+      })
+      .filter((item) => item.target);
+
+    const topicObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const activeId = entry.target.getAttribute("id");
+        topicMap.forEach(({ link, targetId }) => {
+          link.classList.toggle("active", targetId === activeId);
+        });
+      });
+    }, { threshold: 0.32, rootMargin: "-12% 0px -52% 0px" });
+
+    topicMap.forEach(({ link, target }) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+
+    topicMap.forEach(({ target }) => topicObserver.observe(target));
+  }
+
   const reveals = document.querySelectorAll(".reveal");
   if (reveals.length) {
     const revealObserver = new IntersectionObserver((entries) => {
@@ -303,7 +409,43 @@ document.addEventListener("DOMContentLoaded", () => {
     return { ranking, bestSum, totalSum, completedCount, unitTotal: unitKeys.length };
   };
 
+  const renderProgressOverview = (state) => {
+    const panel = document.getElementById("progress-overview");
+    if (!(panel instanceof HTMLElement)) return;
+
+    const global = buildGlobalRanking(state);
+    const percent = global.totalSum > 0 ? Math.round((global.bestSum / global.totalSum) * 100) : 0;
+    const rows = global.ranking
+      .map((item) => {
+        const unitPercent = item.total > 0 ? Math.round((item.best / item.total) * 100) : 0;
+        const unitLabel = item.key.replace("unidad", "Unidad ");
+        return `
+          <div class="progress-row">
+            <div class="progress-row-head">
+              <span>${unitLabel}</span>
+              <strong>${item.best}/${item.total}</strong>
+            </div>
+            <div class="progress-bar"><span style="width:${unitPercent}%"></span></div>
+          </div>
+        `;
+      })
+      .join("");
+
+    panel.innerHTML = `
+      <p class="eyebrow">Mapa de progreso general</p>
+      <div class="progress-header">
+        <h3>Avance acumulado de trivias</h3>
+        <strong>${global.bestSum}/${global.totalSum} • ${percent}%</strong>
+      </div>
+      <div class="progress-bar progress-bar-global"><span style="width:${percent}%"></span></div>
+      <p class="progress-caption">Unidades completadas: ${global.completedCount}/${global.unitTotal}</p>
+      <div class="progress-grid">${rows}</div>
+    `;
+  };
+
   const triviaHubs = document.querySelectorAll(".trivia-hub");
+  renderProgressOverview(loadTriviaProgress());
+
   if (triviaHubs.length) {
     const triviaState = loadTriviaProgress();
 
@@ -334,6 +476,7 @@ document.addEventListener("DOMContentLoaded", () => {
           ...extra
         };
         saveTriviaProgress(triviaState);
+        renderProgressOverview(triviaState);
       };
 
       const renderStats = () => {
@@ -356,8 +499,20 @@ document.addEventListener("DOMContentLoaded", () => {
             <span>Unidades completadas:</span>
             <strong>${global.completedCount}/${global.unitTotal}</strong>
           </div>
+          <label class="trivia-audio-toggle">
+            <input type="checkbox" ${siteSettings.soundEnabled ? "checked" : ""} />
+            <span>Sonido de acierto</span>
+          </label>
           <ol class="trivia-ranking">${rankingItems}</ol>
         `;
+
+        const soundInput = statsBox.querySelector(".trivia-audio-toggle input");
+        if (soundInput instanceof HTMLInputElement) {
+          soundInput.addEventListener("change", () => {
+            siteSettings.soundEnabled = soundInput.checked;
+            saveSettings(siteSettings);
+          });
+        }
       };
 
       if (current >= questions.length) {
@@ -408,6 +563,8 @@ document.addEventListener("DOMContentLoaded", () => {
               score += 1;
               feedback.textContent = "Correcto. Buen dominio del tema.";
               feedback.classList.add("success");
+              triggerSuccessEffect(hub);
+              playSuccessTone();
             } else {
               feedback.textContent = `Respuesta incorrecta. La opción correcta era: ${item.options[correct]}.`;
               feedback.classList.add("error");
@@ -521,6 +678,8 @@ document.addEventListener("DOMContentLoaded", () => {
           option.classList.add('correct');
           quizFeedback.innerHTML = '🎉 EXCELENTE! <br>¡Respuesta correcta!';
           quizFeedback.classList.add('success');
+          triggerSuccessEffect(option.closest('.content-card'));
+          playSuccessTone();
           quizOptions.forEach((btn) => btn.disabled = true);
           retryButton.textContent = 'Volver a intentar';
           retryButton.classList.remove('hidden');
@@ -552,6 +711,8 @@ document.addEventListener("DOMContentLoaded", () => {
           option.classList.add('correct');
           feedback.innerHTML = '✅ Correcto. <br>Aplicar con pasos claros demuestra comprensión.';
           feedback.classList.add('success');
+          triggerSuccessEffect(option.closest('.content-card'));
+          playSuccessTone();
         } else {
           option.classList.add('wrong');
           feedback.innerHTML = '🔎 Casi. <br>Piensa en la opción que resuelve mejor el problema.';

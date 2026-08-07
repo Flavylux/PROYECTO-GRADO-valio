@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <base href="/" />
   <title>Unidad 3 - Lógica y Metodología</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="unit3-page">
   <div class="background-glow glow-one"></div>
   <div class="background-glow glow-two"></div>
   <div class="page-shell">
@@ -73,17 +72,24 @@
         </div>
       </section>
 
-      <section class="content-card reveal trivia-hub" data-unit="unidad3">
-        <p class="eyebrow">Juego de trivia</p>
-        <h2>Reto rápido de la Unidad 3</h2>
-        <div class="trivia-game"></div>
+      <section class="content-card reveal topic-index">
+        <p class="eyebrow">Índice interno</p>
+        <h2>Temas de la Unidad 3</h2>
+        <div class="topic-index-links">
+          <a class="topic-index-link" href="#u3-tema1">1. Sistemas de numeración y binario</a>
+          <a class="topic-index-link" href="#u3-tema2">2. Algoritmos y diagramas de flujo</a>
+          <a class="topic-index-link" href="#u3-tema3">3. Metodología de desarrollo</a>
+          <a class="topic-index-link" href="#u3-tema4">4. Conceptos esenciales</a>
+          <a class="topic-index-link" href="#u3-tema5">5. Lógica programable con PSeInt</a>
+        </div>
       </section>
 
-      <section class="content-card reveal feature-panel flow-left">
+      <section class="content-card reveal feature-panel flow-left" id="u3-tema1">
         <h2 data-icon="🔢">1. Sistemas de Numeración y Código Binario</h2>
-        <figure class="topic-visual">
-          <img src="https://codelearn.es/wp-content/uploads/sites/4/2022/09/binary-code.jpg" alt="Código binario y sistemas de numeración" loading="lazy" decoding="async" />
-          <figcaption>Representación digital de datos en base 2 y base 16.</figcaption>
+        <figure class="topic-visual topic-visual-split">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR22Gr1PhS-pmcU_vGuuDsfO6ZtO1y8_5tZsvMZQxQSmNcB1ytyjr70RWFO&s=10" alt="Código binario" loading="lazy" decoding="async" />
+          <img src="https://www.shutterstock.com/shutterstock/photos/2472116719/display_1500/stock-photo-number-systems-binary-decimal-octal-hexadecimal-2472116719.jpg" alt="Comparación de sistemas numéricos: binario, decimal, octal y hexadecimal" loading="lazy" decoding="async" />
+          <figcaption>Representación digital de datos en base 2, 8, 10 y 16.</figcaption>
         </figure>
         <p>
           La computadora está compuesta por miles de millones de transistores que reconocen dos estados físicos: presencia o ausencia de tensión eléctrica. Por ello, la lógica binaria (<span class="badge">0</span> y <span class="badge">1</span>) es la base de la representación de datos.
@@ -126,11 +132,12 @@ Resultado: 11001₂</pre>
         </ul>
       </section>
 
-      <section class="content-card reveal feature-panel flow-right">
+      <section class="content-card reveal feature-panel flow-right" id="u3-tema2">
         <h2 data-icon="🧠">2. Algoritmos y Diagramas de Flujo</h2>
-        <figure class="topic-visual">
-          <img src="https://static.wixstatic.com/media/cae29b_605ea6fe171145e18a417e5965172462~mv2.webp/v1/fill/w_519,h_541,al_c,lg_1,q_80,enc_avif,quality_auto/cae29b_605ea6fe171145e18a417e5965172462~mv2.webp" alt="Diagrama de flujo de algoritmo" loading="lazy" decoding="async" />
-          <figcaption>Estructura visual para modelar decisiones y procesos.</figcaption>
+        <figure class="topic-visual topic-visual-split">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTax_lc0vYZyqKGktXT5zf3BS_qFFt-vcwR0Ki-y-YOavmMyefg9wpbxb7q&s=10" alt="Simbología de diagramas de flujo" loading="lazy" decoding="async" />
+          <img src="https://static.wixstatic.com/media/cae29b_605ea6fe171145e18a417e5965172462~mv2.webp/v1/fill/w_519,h_541,al_c,lg_1,q_80,enc_avif,quality_auto/cae29b_605ea6fe171145e18a417e5965172462~mv2.webp" alt="Ejemplo de diagrama de flujo de un algoritmo" loading="lazy" decoding="async" />
+          <figcaption>Simbología ANSI/ISO y un ejemplo real de diagrama de flujo.</figcaption>
         </figure>
         <p>
           Un algoritmo es una secuencia ordenada, finita, precisa y no ambigua de pasos logicos que transforma entradas en salidas.
@@ -174,8 +181,13 @@ Resultado: 11001₂</pre>
         </ul>
       </section>
 
-      <section class="content-card reveal feature-panel flow-left">
+      <section class="content-card reveal feature-panel flow-left" id="u3-tema3">
         <h2 data-icon="🛠️">3. Metodologia de Analisis, Diseno, Desarrollo y Evaluacion</h2>
+        <figure class="topic-visual topic-visual-split">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFa7W4o1FmqG6VKhCD-_4zwDElBDXVRgW9j8SRN_X3tlWlqAI5aqMo9q0&s=10" alt="Esquema entrada, proceso y salida de un algoritmo" loading="lazy" decoding="async" />
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwp4ffMqmmNN6_khbm5IksuFmcqRta3dAo7dj5CehRVg&s=10" alt="Herramienta de diseño de diagramas de flujo" loading="lazy" decoding="async" />
+          <figcaption>Modelo de entrada-proceso-salida y herramienta usada en la fase de diseño.</figcaption>
+        </figure>
         <p>
           El Ciclo de Vida del Desarrollo de Software (SDLC) organiza el trabajo para construir soluciones de calidad, escalables y mantenibles.
         </p>
@@ -212,8 +224,13 @@ Resultado: 11001₂</pre>
         </ul>
       </section>
 
-      <section class="content-card reveal feature-panel flow-right">
+      <section class="content-card reveal feature-panel flow-right" id="u3-tema4">
         <h2 data-icon="🧩">4. Diferenciacion de Conceptos Esenciales en Informatica</h2>
+        <figure class="topic-visual topic-visual-split">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGU9wLFn2EFpru1I_Hs3jomSKNjtRjFzpQtjPttvpB8ZWmGz7XP9FOfw8&s=10" alt="Logos de lenguajes de programación" loading="lazy" decoding="async" />
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVb3ruGuXAQCjabsAfM10B6FeG8evJ0t5lqOBX3J-6OFrQqsJOBHsDhRKM&s=10" alt="Código fuente en un editor" loading="lazy" decoding="async" />
+          <figcaption>Distintos lenguajes de programación y su sintaxis real en código.</figcaption>
+        </figure>
         <h3 class="topic-subtitle">Software vs. Hardware</h3>
         <ul class="feature-list">
           <li><strong>Hardware:</strong> parte fisica y tangible del sistema informatico.</li>
@@ -233,11 +250,12 @@ Resultado: 11001₂</pre>
         </ul>
       </section>
 
-      <section class="content-card reveal feature-panel flow-left">
+      <section class="content-card reveal feature-panel flow-left" id="u3-tema5">
         <h2 data-icon="💻">5. Introduccion a la Logica Programable con PSeInt</h2>
-        <figure class="topic-visual">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrsQYmBv4uiQSy4G3PwImQJAclMJ-BIhDfOlaigbOsUQ&s=10" alt="PSeInt y pseudocódigo" loading="lazy" decoding="async" />
-          <figcaption>PSeInt como puente entre la lógica y el código real.</figcaption>
+        <figure class="topic-visual topic-visual-split">
+          <img src="https://elpythonista-static.b-cdn.net/wp-content/uploads/2020/10/Que_Es_Python-2-1024x576.jpg" alt="Python y transición desde pseudocódigo" loading="lazy" decoding="async" />
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiUt67nqQ6aSUOGtLUzNoFDpZWTPtbOpjevMVOAFRpYA&s=10" alt="Logo de PSeInt" loading="lazy" decoding="async" />
+          <figcaption>PSeInt como puente entre la lógica y el código real en Python.</figcaption>
         </figure>
         <p>
           <span class="badge">PSeInt</span> es una herramienta educativa orientada a estudiantes hispanohablantes para desarrollar logica algoritmica antes de abordar sintaxis complejas.
@@ -274,6 +292,61 @@ FinAlgoritmo</code></pre>
           <li><strong>Asignacion (&lt;- o =):</strong> guarda en una variable el resultado de una expresion.</li>
           <li><strong>Generacion de diagramas:</strong> conversion entre pseudocodigo y diagrama de flujo.</li>
         </ol>
+      </section>
+
+      <section class="content-card reveal trivia-hub" data-unit="unidad3">
+        <p class="eyebrow">Juego de trivia</p>
+        <h2>Reto rápido de la Unidad 3</h2>
+        <div class="trivia-game"></div>
+      </section>
+
+      <section class="content-card reveal media-gallery-card" id="u3-recursos-visuales">
+        <p class="eyebrow">Galería visual</p>
+        <h2>Recursos destacados de la Unidad 3</h2>
+        <div class="unit3-gallery">
+          <figure class="gallery-item">
+            <img src="https://elpythonista-static.b-cdn.net/wp-content/uploads/2020/10/Que_Es_Python-2-1024x576.jpg" alt="Concepto general de Python" loading="lazy" decoding="async" />
+            <figcaption>Introducción a Python como lenguaje base para programación estructurada.</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFa7W4o1FmqG6VKhCD-_4zwDElBDXVRgW9j8SRN_X3tlWlqAI5aqMo9q0&s=10" alt="Proceso de diseño de algoritmos" loading="lazy" decoding="async" />
+            <figcaption>Diseño de soluciones con lógica clara y enfoque por etapas.</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR22Gr1PhS-pmcU_vGuuDsfO6ZtO1y8_5tZsvMZQxQSmNcB1ytyjr70RWFO&s=10" alt="Representación de datos binarios" loading="lazy" decoding="async" />
+            <figcaption>Representación digital en binario para comprender la base de cómputo.</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVb3ruGuXAQCjabsAfM10B6FeG8evJ0t5lqOBX3J-6OFrQqsJOBHsDhRKM&s=10" alt="Código fuente en un editor" loading="lazy" decoding="async" />
+            <figcaption>Traducción final de la lógica a código real y ejecutable.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="content-card reveal" id="u3-formulario-final">
+        <p class="eyebrow">Formulario final</p>
+        <h2>Comparte tu avance de la Unidad 3</h2>
+        <p>Envía tus comentarios o dudas finales y te responderé con recomendaciones para seguir mejorando.</p>
+
+        <form class="contact-form" id="contact-form" action="/contacto" method="post">
+          <label>
+            Nombre
+            <input type="text" name="nombre" required />
+          </label>
+
+          <label>
+            Correo
+            <input type="email" name="correo" required />
+          </label>
+
+          <label>
+            Mensaje
+            <textarea name="mensaje" rows="5" required></textarea>
+          </label>
+
+          <button class="btn btn-primary" type="submit">Enviar mensaje</button>
+          <p id="form-message" class="form-message"></p>
+        </form>
       </section>
     </main>
   </div>
