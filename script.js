@@ -88,6 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
       id: "unidad1",
       number: "1",
       title: "Introducción al Mundo de la Programación",
+      difficulty: "★★☆☆☆",
       imageUrl: readmeImageUrls.unidad1,
       topics: [
         {
@@ -113,6 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
       id: "unidad2",
       number: "2",
       title: "Fundamentos de Lógica y Metodología de Desarrollo",
+      difficulty: "★★★★☆",
       imageUrl: readmeImageUrls.unidad2,
       topics: [
         {
@@ -142,28 +144,24 @@ document.addEventListener("DOMContentLoaded", () => {
       id: "unidad3",
       number: "3",
       title: "Programación Estructurada y Lenguaje Python",
+      difficulty: "★★★★★",
       imageUrl: readmeImageUrls.unidad3,
       topics: [
         {
-          heading: "Lógica Algorítmica con PSeInt",
-          text: "Lógica compleja y pseudocódigo estructurado."
+          heading: "Diagramas de Flujo y DFD",
+          text: "Diferenciación entre control de procesos y flujo de datos para modelar soluciones."
         },
         {
-          heading: "Introducción a Python",
-          text: "Sintaxis básica, entorno de ejecución y fundamentos del lenguaje."
+          heading: "Pseudocódigo con PSeInt",
+          text: "Diseño, validación y depuración lógica antes de programar en un lenguaje formal."
         },
         {
-          heading: "Estructuras Condicionales",
-          text: "Control de flujo y toma de decisiones mediante sentencias",
-          badges: ["if"]
-        },
-        {
-          heading: "Estructuras Repetitivas / Bucles",
-          text: "Lógica iterativa con bucles",
-          badges: ["while", "for"]
+          heading: "Implementación en Python",
+          text: "Aplicación final con variables, condicionales, ciclos y funciones.",
+          badges: ["if", "while", "for"]
         }
       ],
-      tags: ["PSeInt", "Python", "if", "while", "for"]
+      tags: ["DFD", "PSeInt", "Python", "if", "while", "for"]
     }
   ];
 
@@ -188,6 +186,10 @@ document.addEventListener("DOMContentLoaded", () => {
           ? `<img class="unit-cover" src="${unit.imageUrl}" alt="Imagen de ${unit.title}" loading="lazy" decoding="async" />`
           : "";
 
+        const difficultyMarkup = unit.difficulty
+          ? `<p class="unit-difficulty-chip" aria-label="Dificultad ${unit.difficulty}">Dificultad: <span>${unit.difficulty}</span></p>`
+          : "";
+
         return `
           <article class="unit-card reveal" id="${unit.id}">
             <div class="unit-badge">${unit.number}</div>
@@ -197,6 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </button>
             <div class="unit-content ${index === 0 ? "open" : ""}">
               ${imageMarkup}
+              ${difficultyMarkup}
               <ul class="unit-points">${topicsMarkup}</ul>
               <div class="unit-tags">${tagsMarkup}</div>
               <a class="btn btn-secondary" href="unidad${unit.number}.html">Ver más</a>
@@ -356,23 +359,28 @@ document.addEventListener("DOMContentLoaded", () => {
     ],
     unidad3: [
       {
-        question: "¿Qué operación describe mejor la conversión de binario a decimal?",
-        options: ["Restar potencias de 10", "Multiplicar cada bit por potencias de 2 y sumar", "Dividir por 16", "Convertir a octal primero"],
+        question: "¿Cuál es la diferencia principal entre diagrama de flujo y DFD?",
+        options: ["No existe diferencia", "El diagrama de flujo modela control y el DFD modela datos", "El DFD solo sirve para hardware", "El diagrama de flujo reemplaza al pseudocódigo"],
         correctIndex: 1
       },
       {
-        question: "¿Qué propiedad exige que un algoritmo termine?",
-        options: ["Precisión", "Definición", "Finitud", "Recursividad"],
+        question: "¿Qué herramienta se usa en esta unidad para escribir pseudocódigo en español?",
+        options: ["Git", "Docker", "PSeInt", "Postman"],
         correctIndex: 2
       },
       {
-        question: "¿Qué fase del SDLC se centra en pruebas y depuración?",
-        options: ["Análisis", "Diseño", "Evaluación", "Codificación"],
+        question: "¿Qué estructura de Python se usa para tomar decisiones?",
+        options: ["for", "if", "while", "def"],
+        correctIndex: 1
+      },
+      {
+        question: "¿Qué bloque de Python repite acciones mientras una condición sea verdadera?",
+        options: ["if", "class", "while", "return"],
         correctIndex: 2
       },
       {
-        question: "¿Cuál es el objetivo principal de PSeInt?",
-        options: ["Reemplazar Python", "Entrenar lógica con pseudocódigo antes de la sintaxis formal", "Diseñar hardware", "Compilar C++"],
+        question: "¿Cuál es el orden metodológico trabajado en la Unidad 3?",
+        options: ["Python -> DFD -> PSeInt", "DFD/flujo -> PSeInt -> Python", "PSeInt -> Python -> DFD", "Solo Python desde el inicio"],
         correctIndex: 1
       }
     ]

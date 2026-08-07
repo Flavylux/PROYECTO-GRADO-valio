@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Unidad 2 - Aplicación</title>
+  <title>Unidad 2 - Lógica y Metodología</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="unit2-page">
@@ -38,6 +38,10 @@
           <p>
             En esta etapa se fortalecen las bases lógicas con sistemas de numeración, algoritmos y diagramas de flujo, junto con las fases del ciclo de vida del software.
           </p>
+          <div class="difficulty-meter" aria-label="Dificultad de la Unidad 2">
+            <span class="difficulty-label">Dificultad</span>
+            <span class="difficulty-stars" aria-label="4 de 5 estrellas">★★★★☆</span>
+          </div>
           <div class="hero-actions">
             <a class="btn btn-primary" href="index.html">Volver al inicio</a>
           </div>
@@ -53,6 +57,7 @@
             <div>
               <h3>Unidad 1</h3>
               <p>Conceptos básicos</p>
+              <p class="unit-difficulty-mini">Dificultad: ★★☆☆☆</p>
             </div>
           </a>
           <a class="unit-index-card active" href="unidad2.html">
@@ -60,6 +65,7 @@
             <div>
               <h3>Unidad 2</h3>
               <p>Aplicación práctica</p>
+              <p class="unit-difficulty-mini">Dificultad: ★★★★☆</p>
             </div>
           </a>
           <a class="unit-index-card" href="unidad3.html">
@@ -67,6 +73,7 @@
             <div>
               <h3>Unidad 3</h3>
               <p>Integración y resultados</p>
+              <p class="unit-difficulty-mini">Dificultad: ★★★★★</p>
             </div>
           </a>
         </div>
@@ -76,171 +83,379 @@
         <p class="eyebrow">Índice interno</p>
         <h2>Temas de la Unidad 2</h2>
         <div class="topic-index-links">
-          <a class="topic-index-link" href="#u2-tema1">1. Contexto histórico y pioneros</a>
-          <a class="topic-index-link" href="#u2-tema2">2. Generaciones de computadoras</a>
-          <a class="topic-index-link" href="#u2-tema3">3. Avances e impacto socioeconómico</a>
-          <a class="topic-index-link" href="#u2-tema4">4. Sistemas operativos</a>
+          <a class="topic-index-link" href="#u2-tema1">1. Sistemas de numeración y binario</a>
+          <a class="topic-index-link" href="#u2-tema2">2. Algoritmos y diagramas de flujo</a>
+          <a class="topic-index-link" href="#u2-tema3">3. Lógica y metodología de desarrollo</a>
+          <a class="topic-index-link" href="#u2-tema4">4. Principios de PSeInt</a>
         </div>
       </section>
 
-      <section class="content-card reveal feature-panel cavern-panel cavern-panel-cyan flow-left" id="u2-tema1">
-        <h2 data-icon="📘">1. Contexto Histórico y los Pioneros de la Computación</h2>
+      <section class="content-card reveal feature-panel cavern-panel cavern-panel-cyan flow-left topic-warcode-front" id="u2-tema1">
+        <h2 data-icon="🔢">1. Sistemas de Numeración y Código Binario</h2>
         <figure class="topic-visual topic-visual-split">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKfrWmMA9izOeTIkxTKrjK87MzHar868qFTFTWeW5bHg&s" alt="Alan Turing, padre de la computación teórica" loading="lazy" decoding="async" />
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPUZJ-VWrK9B9JHAVICsNuB7qgivGlZJLQNov1FI-iMsF3Je0RWu7TVD-g&s=10" alt="Ada Lovelace, primera programadora de la historia" loading="lazy" decoding="async" />
-          <figcaption>Alan Turing y Ada Lovelace, dos pioneros clave de la computación.</figcaption>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR22Gr1PhS-pmcU_vGuuDsfO6ZtO1y8_5tZsvMZQxQSmNcB1ytyjr70RWFO&s=10" alt="Representación visual del código binario" loading="lazy" decoding="async" />
+          <img src="https://www.shutterstock.com/shutterstock/photos/2472116719/display_1500/stock-photo-number-systems-binary-decimal-octal-hexadecimal-2472116719.jpg" alt="Comparación de sistemas numéricos decimal, binario y hexadecimal" loading="lazy" decoding="async" />
+          <figcaption>Base decimal, binaria y hexadecimal como lenguaje de datos en computación.</figcaption>
         </figure>
         <p>
-          La historia de la programación y la informática no comienza con la invención de los chips de silicio o las pantallas digitales, sino con la constante necesidad humana de automatizar cálculos complejos, procesar información y crear mecanismos capaces de ejecutar instrucciones sin intervención manual directa.
+          En el frente técnico de esta unidad se estudia cómo la computadora representa información. Todo parte del sistema binario, donde cada bit adopta estado <span class="badge">0</span> o <span class="badge">1</span>.
         </p>
 
-        <h3 class="topic-subtitle">De los orígenes mecánicos a la era del cálculo</h3>
-        <p>
-          Antes de la llegada de la electricidad, los primeros grandes saltos conceptuales surgieron de la mecánica fina y las matemáticas avanzadas.
-        </p>
+        <pre class="os-diagram">                      SISTEMAS NUMERICOS
+                               |
+      +------------------------+------------------------+
+      |                        |                        |
+Sistema Decimal          Sistema Binario        Sistema Hexadecimal
+ (Base 10: 0-9)           (Base 2: 0, 1)        (Base 16: 0-9, A-F)
+Lenguaje Humano          Lenguaje Maquina          Direccionamiento</pre>
+
+        <h3 class="topic-subtitle">Sistemas posicionales fundamentales</h3>
         <ul class="feature-list">
-          <li><strong>El Ábaco y las Máquinas Mecánicas:</strong> desde los instrumentos antiguos de cálculo hasta la Pascalina (Blaise Pascal, siglo XVII) y las calculadoras mecánicas de Gottfried Wilhelm Leibniz, la humanidad buscó reducir el error humano en las operaciones aritméticas básicas.</li>
-          <li><strong>El Telar de Jacquard (1801):</strong> diseñado por Joseph Marie Jacquard, utilizó tarjetas perforadas para controlar el patrón de tejido, siendo antecedente práctico de entrada de datos programable.</li>
-          <li><strong>Charles Babbage y la Máquina Analítica:</strong> su diseño incluyó procesamiento, memoria, entrada por tarjetas perforadas y salida impresa, elementos esenciales de un ordenador moderno.</li>
+          <li><strong>Sistema Decimal (Base 10):</strong> utiliza diez símbolos (0-9) y cada posición representa potencias de 10.</li>
+          <li><strong>Sistema Binario (Base 2):</strong> utiliza dos símbolos (0 y 1), base de toda representación digital.</li>
+          <li><strong>Sistema Hexadecimal (Base 16):</strong> usa 0-9 y A-F para simplificar secuencias binarias largas.</li>
         </ul>
 
-        <h3 class="topic-subtitle">Los pioneros de la programación y la informática teórica</h3>
+        <h3 class="topic-subtitle">Conversión y almacenamiento de datos</h3>
         <ul class="feature-list">
-          <li><strong>Ada Lovelace (1815-1852):</strong> primera programadora de la historia. Diseñó un algoritmo para números de Bernoulli y anticipó que las máquinas podían manipular símbolos además de números.</li>
-          <li><strong>Alan Turing (1912-1954):</strong> padre de la computación teórica y la inteligencia artificial.
-            <ul class="feature-sublist">
-              <li><strong>Máquina de Turing (1936):</strong> formalizó algoritmo y computabilidad.</li>
-              <li><strong>Criptoanálisis en Bletchley Park:</strong> descifrado de Enigma con dispositivos como Bombe.</li>
-              <li><strong>Prueba de Turing:</strong> criterio sobre inteligencia de máquina comparable a la humana.</li>
-            </ul>
-          </li>
-          <li><strong>John von Neumann (1903-1957):</strong> formuló la Arquitectura de Von Neumann basada en memoria compartida para datos e instrucciones.</li>
-          <li><strong>Grace Hopper (1906-1992):</strong> pionera de lenguajes de alto nivel.
-            <ul class="feature-sublist">
-              <li>Desarrolló el primer compilador (A-0) en 1952.</li>
-              <li>Fue clave en la creación de COBOL.</li>
-              <li>Popularizó los términos bug y debugging.</li>
-            </ul>
-          </li>
+          <li><strong>Binario a decimal:</strong> se multiplica cada bit por potencias de 2 según su posición y se suman los resultados.</li>
+          <li><strong>Decimal a binario:</strong> se realizan divisiones sucesivas entre 2 y se leen residuos en orden inverso.</li>
+          <li><strong>Unidades de memoria:</strong> bit, byte, KB, MB, GB y TB organizan la información en magnitudes crecientes.</li>
+          <li><strong>Aplicación práctica:</strong> comprender estas conversiones facilita interpretar direcciones, archivos y codificación de datos.</li>
         </ul>
+
+        <div class="info-panel">
+          <strong>Enfoque táctico:</strong> dominar numeración es la fase de preparación antes de diseñar algoritmos robustos.
+        </div>
       </section>
 
-      <section class="content-card reveal feature-panel cavern-panel cavern-panel-amber flow-right" id="u2-tema2">
-        <h2 data-icon="🖥️">2. Las Generaciones de Computadoras</h2>
-        <p>
-          La evolución del hardware informático se divide en generaciones definidas por cambios tecnológicos en sus componentes, con aumentos de velocidad y disminución de tamaño y costos.
-        </p>
-
-        <h3 class="topic-subtitle">Primera Generación (1940-1956): Tubos al Vacío</h3>
-        <ul class="feature-list">
-          <li><strong>Tecnología principal:</strong> tubos de vacío para circuitos y lógica binaria.</li>
-          <li><strong>Entrada y salida:</strong> tarjetas perforadas y cintas de papel.</li>
-          <li><strong>Características:</strong> equipos gigantescos, alto consumo energético y frecuentes averías por calor.</li>
-          <li><strong>Programación:</strong> lenguaje máquina en binario <span class="badge">0</span> y <span class="badge">1</span>.</li>
-          <li><strong>Ejemplos históricos:</strong> ENIAC, EDVAC, UNIVAC I.</li>
-        </ul>
-
-        <h3 class="topic-subtitle">Segunda Generación (1956-1963): El Transistor</h3>
-        <ul class="feature-list">
-          <li><strong>Tecnología principal:</strong> transistores de estado sólido.</li>
-          <li><strong>Almacenamiento:</strong> núcleos magnéticos de ferrita y cintas/discos magnéticos.</li>
-          <li><strong>Características:</strong> reducción de tamaño y calor; mayor fiabilidad y velocidad.</li>
-          <li><strong>Avance clave:</strong> lenguajes de alto nivel como FORTRAN y COBOL.</li>
-          <li><strong>Ejemplos históricos:</strong> IBM 1401, IBM 7090, PDP-1.</li>
-        </ul>
-
-        <h3 class="topic-subtitle">Tercera Generación (1964-1971): Circuitos Integrados</h3>
-        <ul class="feature-list">
-          <li><strong>Tecnología principal:</strong> circuito integrado (chip) con miniaturización de transistores.</li>
-          <li><strong>Avances operativos:</strong> primeros sistemas operativos con multiprogramación y tiempo compartido.</li>
-          <li><strong>Interfaz de usuario:</strong> teclados y monitores reemplazan tarjetas perforadas.</li>
-          <li><strong>Ejemplos históricos:</strong> IBM System/360, DEC PDP-8.</li>
-        </ul>
-
-        <h3 class="topic-subtitle">Cuarta Generación (1971-1980s): El Microprocesador</h3>
-        <ul class="feature-list">
-          <li><strong>Tecnología principal:</strong> integración LSI y VLSI, millones de transistores en un chip.</li>
-          <li><strong>Nacimiento de la PC:</strong> Intel 4004 (1971) y masificación en hogares y oficinas.</li>
-          <li><strong>Avances:</strong> mouse, GUI, RAM/ROM, disquetes y discos duros.</li>
-          <li><strong>Ejemplos históricos:</strong> Altair 8800, Apple II, IBM PC, Macintosh.</li>
-        </ul>
-
-        <h3 class="topic-subtitle">Quinta Generación y Era Moderna (1980s-Presente)</h3>
-        <ul class="feature-list">
-          <li><strong>Tecnología principal:</strong> ULSI, procesadores multinúcleo, 64 bits y memoria ultrarrápida.</li>
-          <li><strong>Avances representativos:</strong> internet, web, IoT, móviles, IA y cloud computing.</li>
-          <li><strong>Nuevas fronteras:</strong> computación cuántica con qubits y superposición.</li>
-        </ul>
-      </section>
-
-      <section class="content-card reveal feature-panel cavern-panel cavern-panel-violet flow-left" id="u2-tema3">
-        <h2 data-icon="🌐">3. Avances Tecnológicos e Impacto Socioeconómico</h2>
-        <figure class="topic-visual">
-          <img src="https://media.revistagq.com/photos/5eb3ec929be70fabcbaccccf/16:9/w_1280,c_limit/steve-jobs-bill-gates.png" alt="Liderazgo tecnológico y revolución digital" loading="lazy" decoding="async" />
-          <figcaption>La computación personal y su impacto global.</figcaption>
+      <section class="content-card reveal feature-panel cavern-panel cavern-panel-amber flow-right topic-warcode-signals" id="u2-tema2">
+        <h2 data-icon="🧠">2. Algoritmos y Diagramas de Flujo</h2>
+        <figure class="topic-visual topic-visual-split">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTax_lc0vYZyqKGktXT5zf3BS_qFFt-vcwR0Ki-y-YOavmMyefg9wpbxb7q&s=10" alt="Simbología ANSI e ISO en diagramas de flujo" loading="lazy" decoding="async" />
+          <img src="https://static.wixstatic.com/media/cae29b_605ea6fe171145e18a417e5965172462~mv2.webp/v1/fill/w_519,h_541,al_c,lg_1,q_80,enc_avif,quality_auto/cae29b_605ea6fe171145e18a417e5965172462~mv2.webp" alt="Ejemplo aplicado de diagrama de flujo" loading="lazy" decoding="async" />
+          <figcaption>Los diagramas de flujo permiten visualizar la estrategia de resolución paso a paso.</figcaption>
         </figure>
         <p>
-          El desarrollo de hardware y software ha transformado industria, educación, ciencia y relaciones humanas.
+          Un algoritmo es una secuencia ordenada, finita y no ambigua de pasos para transformar entradas en salidas. En esta fase se consolida la lógica previa a la codificación.
         </p>
 
-        <h3 class="topic-subtitle">Principios y leyes de la evolución tecnológica</h3>
-        <ul class="feature-list">
-          <li><strong>Ley de Moore:</strong> duplicación aproximada de transistores cada dos años, con mayor rendimiento y menor costo relativo durante décadas.</li>
-          <li><strong>Convergencia digital:</strong> integración de telecomunicaciones, medios y datos en plataformas unificadas.</li>
-        </ul>
-
-        <h3 class="topic-subtitle">La revolución de la información y las telecomunicaciones</h3>
-        <ul class="feature-list">
-          <li><strong>De la computación aislada a las redes globales:</strong> ARPANET y el protocolo TCP/IP.</li>
-          <li><strong>World Wide Web (1989-1991):</strong> propuesta de Tim Berners-Lee con HTML, HTTP y URL.</li>
-          <li><strong>Transformación digital global:</strong> automatización, banca electrónica, e-commerce, telemedicina y colaboración en línea.</li>
-        </ul>
-      </section>
-
-      <section class="content-card reveal feature-panel cavern-panel cavern-panel-emerald flow-right" id="u2-tema4">
-        <h2 data-icon="⚙️">4. Sistemas Operativos: Conceptos, Evolución y Arquitectura</h2>
-        <figure class="topic-visual">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUKzG9CqsC9QnSnHatWE512iaH7_S0YXGOmZtVuEhWYA&s=10" alt="Logos de los principales sistemas operativos" loading="lazy" decoding="async" />
-          <figcaption>Windows, macOS, Linux, iOS y Android como sistemas operativos actuales.</figcaption>
-        </figure>
-        <p>
-          Un Sistema Operativo (SO) es el software fundamental de un sistema informático. Actúa como capa de abstracción entre hardware y aplicaciones de usuario.
-        </p>
-
-        <pre class="os-diagram">+-------------------------------------------------------+
-|             USUARIO FINAL / APLICACIONES              |
-|         (Navegador, Juegos, Editor de Código)         |
-+-------------------------------------------------------+
-                          |
-                          v
-+-------------------------------------------------------+
-|                   SISTEMA OPERATIVO                   |
-|  (Gestión de CPU, Memoria, Archivos y Periféricos)    |
-+-------------------------------------------------------+
-                          |
-                          v
-+-------------------------------------------------------+
-|                   HARDWARE FÍSICO                     |
-|           (CPU, Memoria RAM, Disco, GPU)              |
-+-------------------------------------------------------+</pre>
-
-        <h3 class="topic-subtitle">Funciones principales del Sistema Operativo</h3>
+        <h3 class="topic-subtitle">Propiedades fundamentales de un algoritmo</h3>
         <ol class="feature-list ordered-list">
-          <li><strong>Gestión de CPU y procesos:</strong> planificación de ejecución, prioridades y prevención de bloqueos.</li>
-          <li><strong>Gestión de memoria RAM:</strong> asignación/liberación dinámica y memoria virtual.</li>
-          <li><strong>Gestión de archivos:</strong> organización en sistemas de ficheros con permisos de acceso.</li>
-          <li><strong>Gestión de entrada/salida:</strong> control de periféricos mediante drivers.</li>
-          <li><strong>Seguridad y control:</strong> autenticación y aislamiento de procesos con protección del kernel.</li>
+          <li><strong>Precisión:</strong> cada instrucción debe ser clara y exacta.</li>
+          <li><strong>Finitud:</strong> todo algoritmo debe terminar en un número finito de pasos.</li>
+          <li><strong>Definición:</strong> con la misma entrada, debe producir la misma salida.</li>
+          <li><strong>Estructura:</strong> debe identificar entrada, proceso y salida.</li>
         </ol>
 
-        <h3 class="topic-subtitle">Evolución histórica de los Sistemas Operativos</h3>
+        <h3 class="topic-subtitle">Simbología esencial ANSI/ISO</h3>
         <ul class="feature-list">
-          <li><strong>Procesamiento por lotes (1950s):</strong> ejecución secuencial de tarjetas perforadas.</li>
-          <li><strong>Tiempo compartido y multiprogramación (1960s-1970s):</strong> interacción multiusuario; creación de UNIX.</li>
-          <li><strong>Sistemas personales y GUI (1980s-1990s):</strong> expansión de MS-DOS y entornos gráficos en Apple y Microsoft.</li>
-          <li><strong>Movimiento open source:</strong> Linux y GNU como base robusta y flexible para múltiples entornos.</li>
-          <li><strong>Sistemas contemporáneos:</strong> GNU/Linux, Windows, macOS, iOS y Android en arquitecturas modernas y nube.</li>
+          <li><strong>Óvalo:</strong> marca inicio y fin.</li>
+          <li><strong>Paralelogramo:</strong> representa entrada y salida de datos.</li>
+          <li><strong>Rectángulo:</strong> indica proceso o cálculo.</li>
+          <li><strong>Rombo:</strong> expresa decisión lógica (sí/no).</li>
+          <li><strong>Flechas:</strong> definen el flujo de ejecución.</li>
         </ul>
+
+        <pre class="os-diagram">       [ INICIO ]
+           |
+           v
+   / Leer valor de A /
+           |
+           v
+   [ Resultado = A * 2 ]
+           |
+           v
+      / ?A > 10? /
+      /          \
+  (Si) /          \ (No)
+      v            v
+ [ Imprimir X ] [ Imprimir Y ]
+      \            /
+       v          v
+        ( FIN )</pre>
+
+        <div class="info-panel">
+          <strong>Escenario posguerra:</strong> tras el análisis inicial, el diagrama de flujo permite reconstruir el problema con orden y control.
+        </div>
+      </section>
+
+      <section class="content-card reveal feature-panel cavern-panel cavern-panel-violet flow-left topic-warcode-command" id="u2-tema3">
+        <h2 data-icon="🛠️">3. Lógica y Metodología de Desarrollo</h2>
+        <figure class="topic-visual topic-visual-split">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFa7W4o1FmqG6VKhCD-_4zwDElBDXVRgW9j8SRN_X3tlWlqAI5aqMo9q0&s=10" alt="Modelo de entrada, proceso y salida" loading="lazy" decoding="async" />
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwp4ffMqmmNN6_khbm5IksuFmcqRta3dAo7dj5CehRVg&s=10" alt="Diseño metodológico de algoritmos" loading="lazy" decoding="async" />
+          <figcaption>La metodología organiza el avance desde el problema hasta la solución validada.</figcaption>
+        </figure>
+        <p>
+          La metodología de desarrollo guía el proyecto en cuatro fases estratégicas: análisis, diseño, desarrollo y evaluación. Este ciclo mejora calidad, trazabilidad y mantenimiento.
+        </p>
+
+        <pre class="os-diagram">+---------------------------------------------------------------+
+|                       1. ANALISIS                             |
+|          Comprender el problema y determinar inputs/outputs   |
++---------------------------------------------------------------+
+                               |
+                               v
++---------------------------------------------------------------+
+|                        2. DISENO                              |
+|           Estructurar la solucion (Diagramas / Algoritmos)    |
++---------------------------------------------------------------+
+                               |
+                               v
++---------------------------------------------------------------+
+|                      3. DESARROLLO                            |
+|             Traduccion a codigo en un lenguaje                |
++---------------------------------------------------------------+
+                               |
+                               v
++---------------------------------------------------------------+
+|                      4. EVALUACION                            |
+|           Pruebas de software, depuracion y validacion        |
++---------------------------------------------------------------+</pre>
+
+        <h3 class="topic-subtitle">Fases del ciclo metodológico</h3>
+        <ul class="feature-list">
+          <li><strong>Análisis:</strong> identificar necesidades, entradas, salidas y restricciones.</li>
+          <li><strong>Diseño:</strong> modelar la solución con pseudocódigo, diagramas y reglas lógicas.</li>
+          <li><strong>Desarrollo:</strong> implementar el diseño en un lenguaje de programación.</li>
+          <li><strong>Evaluación:</strong> probar, verificar, validar y corregir errores.</li>
+        </ul>
+
+        <h3 class="topic-subtitle">Conceptos clave para no confundir</h3>
+        <ul class="feature-list">
+          <li><strong>Hardware vs. software:</strong> físico tangible frente a lógica de instrucciones.</li>
+          <li><strong>Compilado vs. interpretado:</strong> ejecución previa total frente a ejecución paso a paso.</li>
+          <li><strong>Lógica vs. sintaxis:</strong> estrategia de solución frente a reglas gramaticales del lenguaje.</li>
+        </ul>
+      </section>
+
+      <section class="content-card reveal feature-panel cavern-panel cavern-panel-emerald flow-right topic-warcode-rebuild" id="u2-tema4">
+        <h2 data-icon="💻">4. Principios de PSeInt para Diseñar Pseudocódigo</h2>
+        <figure class="topic-visual topic-visual-split">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiUt67nqQ6aSUOGtLUzNoFDpZWTPtbOpjevMVOAFRpYA&s=10" alt="Logo de PSeInt" loading="lazy" decoding="async" />
+          <img src="https://elpythonista-static.b-cdn.net/wp-content/uploads/2020/10/Que_Es_Python-2-1024x576.jpg" alt="Transición desde pseudocódigo a Python" loading="lazy" decoding="async" />
+          <figcaption>PSeInt sirve como puente entre la lógica algorítmica y la programación real.</figcaption>
+        </figure>
+        <p>
+          PSeInt es una herramienta educativa que permite entrenar razonamiento algorítmico en español antes de pasar a sintaxis formal como Python o C++.
+        </p>
+
+        <h3 class="topic-subtitle">1. Conceptos Básicos de PSeInt</h3>
+        <p>
+          Para programar en PSeInt necesitas entender cuatro pilares fundamentales:
+        </p>
+        <ul class="feature-list">
+          <li><strong>Estructura del algoritmo:</strong> todo programa comienza con <span class="badge">Algoritmo Nombre</span> y termina con <span class="badge">FinAlgoritmo</span>.</li>
+          <li><strong>Variables y tipos de datos:</strong> una variable es un contenedor para almacenar datos y debe declararse con <span class="badge">Definir</span>.</li>
+          <li><strong>Salida de datos (Escribir):</strong> muestra texto o resultados en pantalla.</li>
+          <li><strong>Entrada de datos (Leer):</strong> solicita un dato al usuario y lo guarda en una variable.</li>
+          <li><strong>Asignación (&lt;-):</strong> guarda un valor dentro de una variable.</li>
+        </ul>
+
+        <h3 class="topic-subtitle">Tipos de datos en PSeInt</h3>
+        <ul class="feature-list">
+          <li><strong>Entero:</strong> números sin decimales (ejemplo: 10, -5).</li>
+          <li><strong>Real:</strong> números con decimales (ejemplo: 3.1416, 18.5).</li>
+          <li><strong>Cadena o Texto:</strong> texto entre comillas (ejemplo: "Hola Mundo").</li>
+          <li><strong>Lógico:</strong> valores de verdad (<span class="badge">Verdadero</span> o <span class="badge">Falso</span>).</li>
+        </ul>
+
+        <h3 class="topic-subtitle">Fragmento de código: conceptos básicos</h3>
+        <pre class="os-diagram"><code>Algoritmo ConceptosBasicos
+    // 1. Declaración de variables
+    Definir nombre Como Cadena
+    Definir edad Como Entero
+    Definir estatura Como Real
+
+    // 2. Salida y entrada de datos
+    Escribir "Ingrese su nombre:"
+    Leer nombre
+
+    Escribir "Ingrese su edad:"
+    Leer edad
+
+    // 3. Asignación y operación
+    estatura &lt;- 1.75
+
+    // 4. Mostrar resultados concatenando texto y variables
+    Escribir "Hola ", nombre, ", tienes ", edad, " años y mides ", estatura, " metros."
+FinAlgoritmo</code></pre>
+
+        <h3 class="topic-subtitle">2. Estructuras Condicionales (Toma de Decisiones)</h3>
+        <p>
+          Permiten que el programa tome diferentes caminos según se cumpla o no una condición lógica.
+        </p>
+
+        <h3 class="topic-subtitle">A. Condicional simple y compuesto (Si - Entonces - Sino)</h3>
+        <ul class="feature-list">
+          <li><strong>Si - Entonces:</strong> ejecuta un bloque solo si la condición es verdadera.</li>
+          <li><strong>Sino:</strong> ejecuta un bloque alternativo cuando la condición es falsa.</li>
+        </ul>
+        <pre class="os-diagram"><code>Algoritmo EjemploSiSino
+    Definir edad Como Entero
+
+    Escribir "Ingrese su edad:"
+    Leer edad
+
+    // Evaluación de la condición
+    Si edad &gt;= 18 Entonces
+        Escribir "Eres mayor de edad. Puedes ingresar."
+    Sino
+        Escribir "Eres menor de edad. Acceso denegado."
+    FinSi
+FinAlgoritmo</code></pre>
+
+        <h3 class="topic-subtitle">B. Condicional anidado (Si dentro de otro Si)</h3>
+        <p>
+          Se utiliza para evaluar múltiples condiciones en secuencia.
+        </p>
+        <pre class="os-diagram"><code>Algoritmo EjemploSiAnidado
+    Definir nota Como Real
+
+    Escribir "Ingrese su nota (0 a 10):"
+    Leer nota
+
+    Si nota &gt;= 9 Entonces
+        Escribir "Excelente"
+    Sino
+        // Se evalúa si no se cumplió la condición anterior
+        Si nota &gt;= 7 Entonces
+            Escribir "Aprobado"
+        Sino
+            Escribir "Reprobado"
+        FinSi
+    FinSi
+FinAlgoritmo</code></pre>
+
+        <h3 class="topic-subtitle">C. Condicional múltiple (Segun)</h3>
+        <p>
+          Es una alternativa más limpia a condicionales anidados cuando una variable puede tomar valores concretos, como en menús.
+        </p>
+        <pre class="os-diagram"><code>Algoritmo EjemploSegun
+    Definir opcion Como Entero
+
+    Escribir "MENU DE OPCIONES:"
+    Escribir "1. Saludar"
+    Escribir "2. Despedirse"
+    Escribir "Seleccione una opción (1-2):"
+    Leer opcion
+
+    Segun opcion Hacer
+        1:
+            Escribir "Hola. Bienvenido al programa."
+        2:
+            Escribir "Hasta luego. Que tengas un buen día."
+        De Otro Modo:
+            Escribir "Opción no válida."
+    FinSegun
+FinAlgoritmo</code></pre>
+
+        <h3 class="topic-subtitle">3. Estructuras Repetitivas (Ciclos o Bucles)</h3>
+        <p>
+          Los ciclos permiten repetir un bloque de código múltiples veces según una condición o un contador.
+        </p>
+
+        <h3 class="topic-subtitle">A. Ciclo Mientras (Pre-prueba)</h3>
+        <p>
+          Evalúa la condición antes de entrar al ciclo. Si no se cumple desde el inicio, el bloque nunca se ejecuta.
+        </p>
+        <pre class="os-diagram"><code>Algoritmo EjemploMientras
+    Definir contador Como Entero
+    contador &lt;- 1
+
+    // Mientras el contador sea menor o igual a 5, repite el bloque
+    Mientras contador &lt;= 5 Hacer
+        Escribir "Contador actual: ", contador
+        contador &lt;- contador + 1 // Incremento esencial para evitar bucles infinitos
+    FinMientras
+FinAlgoritmo</code></pre>
+
+        <h3 class="topic-subtitle">B. Ciclo Repetir (Pos-prueba)</h3>
+        <p>
+          Ejecuta el bloque al menos una vez y se detiene cuando la condición se vuelve verdadera.
+        </p>
+        <pre class="os-diagram"><code>Algoritmo EjemploRepetir
+    Definir clave Como Entero
+
+    Repetir
+        Escribir "Ingrese la clave de acceso (1234):"
+        Leer clave
+
+        Si clave &lt;&gt; 1234 Entonces
+            Escribir "Clave incorrecta."
+        FinSi
+    Hasta Que clave = 1234 // Finaliza cuando esta condición sea Verdadera
+
+    Escribir "Acceso concedido"
+FinAlgoritmo</code></pre>
+
+        <h3 class="topic-subtitle">C. Ciclo Para (Determinado)</h3>
+        <p>
+          Se usa cuando se conoce con exactitud el número de iteraciones a realizar.
+        </p>
+        <pre class="os-diagram"><code>Algoritmo EjemploPara
+    Definir i Como Entero
+
+    // Inicializa i en 1 y cuenta hasta 5 sumando de 1 en 1
+    Para i &lt;- 1 Hasta 5 Con Paso 1 Hacer
+        Escribir "Iteración número ", i
+    FinPara
+FinAlgoritmo</code></pre>
+
+        <h3 class="topic-subtitle">Cuadro Resumen de Sintaxis PSeInt</h3>
+        <div class="syntax-table-wrapper">
+          <table class="syntax-table">
+            <thead>
+              <tr>
+                <th>Estructura</th>
+                <th>Propósito</th>
+                <th>Sintaxis básica</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Variables</td>
+                <td>Definir tipos de datos</td>
+                <td><code>Definir var Como [Entero / Real / Cadena / Logico]</code></td>
+              </tr>
+              <tr>
+                <td>Entrada / Salida</td>
+                <td>Interacción con usuario</td>
+                <td><code>Escribir "Texto"</code> / <code>Leer variable</code></td>
+              </tr>
+              <tr>
+                <td>Si / Sino</td>
+                <td>Condicional simple o doble</td>
+                <td><code>Si condicion Entonces ... Sino ... FinSi</code></td>
+              </tr>
+              <tr>
+                <td>Segun</td>
+                <td>Condicional múltiple</td>
+                <td><code>Segun variable Hacer 1: ... De Otro Modo: ... FinSegun</code></td>
+              </tr>
+              <tr>
+                <td>Mientras</td>
+                <td>Bucle pre-prueba (0 a N iteraciones)</td>
+                <td><code>Mientras condicion Hacer ... FinMientras</code></td>
+              </tr>
+              <tr>
+                <td>Repetir</td>
+                <td>Bucle pos-prueba (1 a N iteraciones)</td>
+                <td><code>Repetir ... Hasta Que condicion</code></td>
+              </tr>
+              <tr>
+                <td>Para</td>
+                <td>Bucle con contador conocido</td>
+                <td><code>Para var &lt;- inicio Hasta fin Con Paso paso Hacer ... FinPara</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="info-panel">
+          <strong>Idea central:</strong> dominar estos fundamentos en PSeInt te prepara para pasar de la lógica al código en cualquier lenguaje de programación.
+        </div>
       </section>
 
       <section class="content-card reveal trivia-hub" data-unit="unidad2">

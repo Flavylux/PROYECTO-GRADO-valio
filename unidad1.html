@@ -38,6 +38,10 @@
           <p>
             Esta unidad presenta el origen del pensamiento algorítmico, la evolución de las computadoras y los fundamentos de los sistemas operativos como punto de partida para la formación en programación.
           </p>
+          <div class="difficulty-meter" aria-label="Dificultad de la Unidad 1">
+            <span class="difficulty-label">Dificultad</span>
+            <span class="difficulty-stars" aria-label="2 de 5 estrellas">★★☆☆☆</span>
+          </div>
           <div class="hero-actions">
             <a class="btn btn-primary" href="index.html">Volver al inicio</a>
           </div>
@@ -53,6 +57,7 @@
             <div>
               <h3>Unidad 1</h3>
               <p>Conceptos básicos de programación</p>
+              <p class="unit-difficulty-mini">Dificultad: ★★☆☆☆</p>
             </div>
           </a>
           <a class="unit-index-card" href="unidad2.html">
@@ -60,6 +65,7 @@
             <div>
               <h3>Unidad 2</h3>
               <p>Aplicación práctica</p>
+              <p class="unit-difficulty-mini">Dificultad: ★★★★☆</p>
             </div>
           </a>
           <a class="unit-index-card" href="unidad3.html">
@@ -67,6 +73,7 @@
             <div>
               <h3>Unidad 3</h3>
               <p>Integración y resultados</p>
+              <p class="unit-difficulty-mini">Dificultad: ★★★★★</p>
             </div>
           </a>
         </div>
@@ -83,7 +90,7 @@
         </div>
       </section>
 
-      <section class="content-card reveal feature-panel tone-cyan flow-left" id="u1-tema1">
+      <section class="content-card reveal feature-panel tone-cyan flow-right topic-neo-temple" id="u1-tema1">
         <h2 data-icon="📘">1. Contexto Histórico y los Pioneros de la Computación</h2>
         <figure class="topic-visual topic-visual-split">
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKfrWmMA9izOeTIkxTKrjK87MzHar868qFTFTWeW5bHg&s" alt="Alan Turing, padre de la computación teórica" loading="lazy" decoding="async" />
@@ -100,6 +107,17 @@
           <li><strong>El Telar de Jacquard (1801):</strong> diseñado por Joseph Marie Jacquard, este telar utilizaba tarjetas perforadas para controlar el patrón de tejido. Constituyó el primer antecedente práctico de la entrada de datos programable, demostrando que un mecanismo físico podía cambiar sus instrucciones de operación sin ser reestructurado internamente.</li>
           <li><strong>Charles Babbage y la Máquina Analítica:</strong> en el siglo XIX, Babbage concibió la Máquina Diferencial y, posteriormente, la Máquina Analítica. Esta última contenía todos los elementos esenciales de un ordenador moderno: una unidad de procesamiento, una memoria, un sistema de entrada por tarjetas perforadas y un mecanismo de salida impreso.</li>
         </ul>
+
+        <div class="u1-media-grid" aria-label="Galería del Telar de Jacquard y Charles Babbage">
+          <figure class="u1-media-card">
+            <img src="https://www.muycomputer.com/wp-content/uploads/2019/12/Telar-de-Jacquard-2.jpg" alt="El Telar de Jacquard como antecedente de la programación con tarjetas perforadas" loading="lazy" decoding="async" />
+            <figcaption>El Telar de Jacquard introdujo la lógica programable mediante tarjetas perforadas.</figcaption>
+          </figure>
+          <figure class="u1-media-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/CharlesBabbage.jpg" alt="Retrato de Charles Babbage" loading="lazy" decoding="async" />
+            <figcaption>Charles Babbage propuso la Máquina Analítica, base conceptual del computador moderno.</figcaption>
+          </figure>
+        </div>
 
         <h3 class="topic-subtitle">Los pioneros de la programación y la informática teórica</h3>
         <ul class="feature-list">
@@ -120,56 +138,119 @@
             </ul>
           </li>
         </ul>
+
+        <div class="u1-media-grid" aria-label="Galería de John von Neumann y Grace Hopper">
+          <figure class="u1-media-card">
+            <img src="https://s3.ppllstatics.com/elcorreo/www/multimedia/2024/04/04/von-neumann-kMhG-U2102007084987KTC-1200x840@El%20Correo.jpg" alt="John von Neumann, referente de la arquitectura computacional" loading="lazy" decoding="async" />
+            <figcaption>John von Neumann consolidó la arquitectura de programa almacenado.</figcaption>
+          </figure>
+          <figure class="u1-media-card">
+            <img src="https://cdn.britannica.com/00/149300-050-DC398492/Grace-Murray-Hopper-Bureau-of-Ordnance-Computation-1946.jpg" alt="Grace Hopper, pionera de compiladores y lenguajes de alto nivel" loading="lazy" decoding="async" />
+            <figcaption>Grace Hopper impulsó el primer compilador y la evolución de COBOL.</figcaption>
+          </figure>
+        </div>
       </section>
 
-      <section class="content-card reveal feature-panel tone-amber flow-right" id="u1-tema2">
+      <section class="content-card reveal feature-panel tone-amber flow-right topic-chrono-grid" id="u1-tema2">
         <h2 data-icon="🖥️">2. Las Generaciones de Computadoras</h2>
         <p>
           La evolución del hardware informático se divide tradicionalmente en generaciones caracterizadas por cambios tecnológicos fundamentales en sus componentes electrónicos, con aumentos de velocidad y reducción de tamaño y costos.
         </p>
 
-        <h3 class="topic-subtitle">Primera Generación (1940-1956): Tubos al Vacío</h3>
-        <ul class="feature-list">
-          <li><strong>Tecnología principal:</strong> tubos de vacío para lógica binaria.</li>
-          <li><strong>Entrada/Salida:</strong> tarjetas perforadas y cintas de papel.</li>
-          <li><strong>Características:</strong> tamaño gigante, alto consumo y fallas frecuentes por calor.</li>
-          <li><strong>Programación:</strong> lenguaje máquina con <span class="badge">0</span> y <span class="badge">1</span>.</li>
-          <li><strong>Ejemplos:</strong> ENIAC, EDVAC, UNIVAC I.</li>
-        </ul>
+        <div class="generation-timeline" aria-label="Línea cronológica de generaciones de computadoras">
+          <article class="generation-step">
+            <figure class="generation-card">
+              <img src="https://codelearn.es/wp-content/uploads/sites/4/2023/03/ENIAC.png" alt="ENIAC, representación de la primera generación de computadoras" loading="lazy" decoding="async" />
+              <figcaption>Primera generación: tubos al vacío y grandes equipos como ENIAC.</figcaption>
+            </figure>
+            <div class="generation-copy">
+              <h3 class="topic-subtitle">Primera Generación (1940-1956): Tubos al Vacío</h3>
+              <ul class="feature-list">
+                <li><strong>Tecnología principal:</strong> tubos de vacío para lógica binaria.</li>
+                <li><strong>Entrada/Salida:</strong> tarjetas perforadas y cintas de papel.</li>
+                <li><strong>Características:</strong> tamaño gigante, alto consumo y fallas frecuentes por calor.</li>
+                <li><strong>Programación:</strong> lenguaje máquina con <span class="badge">0</span> y <span class="badge">1</span>.</li>
+                <li><strong>Ejemplos:</strong> ENIAC, EDVAC, UNIVAC I.</li>
+              </ul>
+            </div>
+          </article>
 
-        <h3 class="topic-subtitle">Segunda Generación (1956-1963): El Transistor</h3>
-        <ul class="feature-list">
-          <li><strong>Tecnología principal:</strong> transistores de estado sólido.</li>
-          <li><strong>Características:</strong> menor tamaño, mayor fiabilidad y menor consumo.</li>
-          <li><strong>Avance clave:</strong> lenguajes de alto nivel como FORTRAN y COBOL.</li>
-          <li><strong>Ejemplos:</strong> IBM 1401, IBM 7090, PDP-1.</li>
-        </ul>
+          <article class="generation-step">
+            <figure class="generation-card">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2b54joq2BR-NuHhpJlL_TNzK_k3Vt79VlPR0l43d4R9NUvkLhESRrzXo&s=10" alt="Segunda generación de computadoras con transistores" loading="lazy" decoding="async" />
+              <figcaption>Segunda generación: llegada del transistor y mayor fiabilidad.</figcaption>
+            </figure>
+            <div class="generation-copy">
+              <h3 class="topic-subtitle">Segunda Generación (1956-1963): El Transistor</h3>
+              <ul class="feature-list">
+                <li><strong>Tecnología principal:</strong> transistores de estado sólido.</li>
+                <li><strong>Características:</strong> menor tamaño, mayor fiabilidad y menor consumo.</li>
+                <li><strong>Avance clave:</strong> lenguajes de alto nivel como FORTRAN y COBOL.</li>
+                <li><strong>Ejemplos:</strong> IBM 1401, IBM 7090, PDP-1.</li>
+              </ul>
+            </div>
+          </article>
 
-        <h3 class="topic-subtitle">Tercera Generación (1964-1971): Circuitos Integrados</h3>
-        <ul class="feature-list">
-          <li><strong>Tecnología principal:</strong> chips con cientos y miles de transistores.</li>
-          <li><strong>Avance operativo:</strong> primeros sistemas operativos con multiprogramación.</li>
-          <li><strong>Interfaz:</strong> adopción de teclados y monitores.</li>
-          <li><strong>Ejemplos:</strong> IBM System/360, DEC PDP-8.</li>
-        </ul>
+          <article class="generation-step">
+            <figure class="generation-card">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbRqv-5hkpAaOTjcPPBTzZt9FhGJS-Qg1e1q0J1Xw4O-I8F2F64AwbOyKo&s=10" alt="Tercera generación de computadoras con circuitos integrados" loading="lazy" decoding="async" />
+              <figcaption>Tercera generación: circuitos integrados y sistemas más versátiles.</figcaption>
+            </figure>
+            <div class="generation-copy">
+              <h3 class="topic-subtitle">Tercera Generación (1964-1971): Circuitos Integrados</h3>
+              <ul class="feature-list">
+                <li><strong>Tecnología principal:</strong> chips con cientos y miles de transistores.</li>
+                <li><strong>Avance operativo:</strong> primeros sistemas operativos con multiprogramación.</li>
+                <li><strong>Interfaz:</strong> adopción de teclados y monitores.</li>
+                <li><strong>Ejemplos:</strong> IBM System/360, DEC PDP-8.</li>
+              </ul>
+            </div>
+          </article>
 
-        <h3 class="topic-subtitle">Cuarta Generación (1971-1980s): El Microprocesador</h3>
-        <ul class="feature-list">
-          <li><strong>Tecnología principal:</strong> integración LSI y VLSI en un microprocesador.</li>
-          <li><strong>Hito:</strong> Intel 4004 e inicio de la PC.</li>
-          <li><strong>Avances:</strong> GUI, mouse, RAM/ROM, disquetes y discos duros.</li>
-          <li><strong>Ejemplos:</strong> Altair 8800, Apple II, IBM PC, Macintosh.</li>
-        </ul>
+          <article class="generation-step">
+            <figure class="generation-card">
+              <img src="https://image.slidesharecdn.com/4ageneracion-131201051136-phpapp01/75/CUARTA-GENERACION-1-2048.jpg" alt="Cuarta generación de computadoras y microprocesadores" loading="lazy" decoding="async" />
+              <figcaption>Cuarta generación: microprocesadores y nacimiento de la PC.</figcaption>
+            </figure>
+            <div class="generation-copy">
+              <h3 class="topic-subtitle">Cuarta Generación (1971-1980s): El Microprocesador</h3>
+              <ul class="feature-list">
+                <li><strong>Tecnología principal:</strong> integración LSI y VLSI en un microprocesador.</li>
+                <li><strong>Hito:</strong> Intel 4004 e inicio de la PC.</li>
+                <li><strong>Avances:</strong> GUI, mouse, RAM/ROM, disquetes y discos duros.</li>
+                <li><strong>Ejemplos:</strong> Altair 8800, Apple II, IBM PC, Macintosh.</li>
+              </ul>
+            </div>
+          </article>
 
-        <h3 class="topic-subtitle">Quinta Generación y Era Moderna (1980s-Presente)</h3>
-        <ul class="feature-list">
-          <li><strong>Tecnología principal:</strong> ULSI, procesadores multinúcleo y 64 bits.</li>
-          <li><strong>Avances representativos:</strong> internet global, nube, IoT, móviles e inteligencia artificial.</li>
-          <li><strong>Nuevas fronteras:</strong> computación cuántica basada en qubits.</li>
-        </ul>
+          <article class="generation-step">
+            <figure class="generation-card">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7G95fOEGeSVTay7EogF-PgZ9k3AC3eiqbiWGm6YYgOTOjJVWdiVYVJvE3&s=10" alt="Quinta generación de computadoras con enfoque en inteligencia artificial" loading="lazy" decoding="async" />
+              <figcaption>Quinta generación: conectividad global, IA y plataformas inteligentes.</figcaption>
+            </figure>
+            <div class="generation-copy">
+              <h3 class="topic-subtitle">Quinta Generación y Era Moderna (1980s-Presente)</h3>
+              <ul class="feature-list">
+                <li><strong>Tecnología principal:</strong> ULSI, procesadores multinúcleo y 64 bits.</li>
+                <li><strong>Avances representativos:</strong> internet global, nube, IoT, móviles e inteligencia artificial.</li>
+                <li><strong>Nuevas fronteras:</strong> computación cuántica basada en qubits.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <div class="future-note" role="note" aria-label="Reflexión sobre la sexta generación">
+          <p>
+            De la sexta generación de computadoras no hace falta hablar, pues los avances en IA y otros elementos son cada vez más notorios; estamos cerca de llegar a la era de los ordenadores cuánticos.
+          </p>
+          <figure class="future-note-visual">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1uS6UockZ86TNsL_uyv-a6PfQhR1apbPgWS8QgzA5tw&s=10" alt="Representación de la transición hacia la computación cuántica" loading="lazy" decoding="async" />
+            <figcaption>La próxima frontera tecnológica apunta a la computación cuántica aplicada.</figcaption>
+          </figure>
+        </div>
       </section>
 
-      <section class="content-card reveal feature-panel tone-violet flow-left" id="u1-tema3">
+      <section class="content-card reveal feature-panel tone-violet flow-left topic-orbit-market" id="u1-tema3">
         <h2 data-icon="🌐">3. Avances Tecnológicos e Impacto Socioeconómico</h2>
         <figure class="topic-visual">
           <img src="https://media.revistagq.com/photos/5eb3ec929be70fabcbaccccf/16:9/w_1280,c_limit/steve-jobs-bill-gates.png" alt="Liderazgo tecnológico y revolución digital" loading="lazy" decoding="async" />
@@ -193,7 +274,7 @@
         </ul>
       </section>
 
-      <section class="content-card reveal feature-panel tone-emerald flow-right" id="u1-tema4">
+      <section class="content-card reveal feature-panel tone-emerald flow-right topic-kernel-sanctum" id="u1-tema4">
         <h2 data-icon="⚙️">4. Sistemas Operativos: Conceptos, Evolución y Arquitectura</h2>
         <figure class="topic-visual">
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUKzG9CqsC9QnSnHatWE512iaH7_S0YXGOmZtVuEhWYA&s=10" alt="Logos de los principales sistemas operativos" loading="lazy" decoding="async" />

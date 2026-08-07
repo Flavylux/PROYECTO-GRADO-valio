@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Unidad 3 - Lógica y Metodología</title>
+  <title>Unidad 3 - Programación Estructurada y Python</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="unit3-page">
@@ -33,11 +33,15 @@
     <main>
       <section class="hero">
         <div class="hero-content reveal">
-          <p class="eyebrow">Unidad 3 • Fundamentos de Lógica y Metodología de Desarrollo</p>
-          <h1>Sistemas numéricos, algoritmos y diseño de soluciones</h1>
+          <p class="eyebrow">Unidad 3 • Programación Estructurada y Lenguaje Python</p>
+          <h1>De los modelos lógicos al código real en Python</h1>
           <p>
-            Esta unidad profundiza en la representación binaria, el modelado con diagramas de flujo, el ciclo de vida del software y la transición a la lógica programable con PSeInt.
+            Esta unidad se enfoca en la transición práctica desde la representación de procesos con diagramas y pseudocódigo hasta la implementación final con Python.
           </p>
+          <div class="difficulty-meter" aria-label="Dificultad de la Unidad 3">
+            <span class="difficulty-label">Dificultad</span>
+            <span class="difficulty-stars" aria-label="5 de 5 estrellas">★★★★★</span>
+          </div>
           <div class="hero-actions">
             <a class="btn btn-primary" href="index.html">Volver al inicio</a>
           </div>
@@ -53,6 +57,7 @@
             <div>
               <h3>Unidad 1</h3>
               <p>Conceptos básicos</p>
+              <p class="unit-difficulty-mini">Dificultad: ★★☆☆☆</p>
             </div>
           </a>
           <a class="unit-index-card" href="unidad2.html">
@@ -60,13 +65,15 @@
             <div>
               <h3>Unidad 2</h3>
               <p>Aplicación práctica</p>
+              <p class="unit-difficulty-mini">Dificultad: ★★★★☆</p>
             </div>
           </a>
           <a class="unit-index-card active" href="unidad3.html">
             <span class="unit-index-number">03</span>
             <div>
               <h3>Unidad 3</h3>
-              <p>Lógica y metodología</p>
+              <p>Programación estructurada</p>
+              <p class="unit-difficulty-mini">Dificultad: ★★★★★</p>
             </div>
           </a>
         </div>
@@ -76,222 +83,265 @@
         <p class="eyebrow">Índice interno</p>
         <h2>Temas de la Unidad 3</h2>
         <div class="topic-index-links">
-          <a class="topic-index-link" href="#u3-tema1">1. Sistemas de numeración y binario</a>
-          <a class="topic-index-link" href="#u3-tema2">2. Algoritmos y diagramas de flujo</a>
-          <a class="topic-index-link" href="#u3-tema3">3. Metodología de desarrollo</a>
-          <a class="topic-index-link" href="#u3-tema4">4. Conceptos esenciales</a>
-          <a class="topic-index-link" href="#u3-tema5">5. Lógica programable con PSeInt</a>
+          <a class="topic-index-link" href="#u3-tema1">1. Diferenciación: Diagrama de flujo y DFD</a>
+          <a class="topic-index-link" href="#u3-tema2">2. Pseudocódigo con PSeInt</a>
+          <a class="topic-index-link" href="#u3-tema3">3. Implementación final en Python</a>
         </div>
       </section>
 
-      <section class="content-card reveal feature-panel flow-left" id="u3-tema1">
-        <h2 data-icon="🔢">1. Sistemas de Numeración y Código Binario</h2>
+      <section class="content-card reveal feature-panel flow-left topic-odyssey-map" id="u3-tema1">
+        <h2 data-icon="🧭">1. Diferenciación entre Diagrama de Flujo y DFD</h2>
         <figure class="topic-visual topic-visual-split">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR22Gr1PhS-pmcU_vGuuDsfO6ZtO1y8_5tZsvMZQxQSmNcB1ytyjr70RWFO&s=10" alt="Código binario" loading="lazy" decoding="async" />
-          <img src="https://www.shutterstock.com/shutterstock/photos/2472116719/display_1500/stock-photo-number-systems-binary-decimal-octal-hexadecimal-2472116719.jpg" alt="Comparación de sistemas numéricos: binario, decimal, octal y hexadecimal" loading="lazy" decoding="async" />
-          <figcaption>Representación digital de datos en base 2, 8, 10 y 16.</figcaption>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTax_lc0vYZyqKGktXT5zf3BS_qFFt-vcwR0Ki-y-YOavmMyefg9wpbxb7q&s=10" alt="Simbología estándar de diagrama de flujo" loading="lazy" decoding="async" />
+          <img src="https://www.visual-paradigm.com/guide/data-flow-diagram/what-is-data-flow-diagram/dfd-level-0-example.png" alt="Ejemplo de diagrama de flujo de datos (DFD)" loading="lazy" decoding="async" />
+          <figcaption>El diagrama de flujo modela pasos de control, mientras el DFD modela movimiento de datos.</figcaption>
         </figure>
         <p>
-          La computadora está compuesta por miles de millones de transistores que reconocen dos estados físicos: presencia o ausencia de tensión eléctrica. Por ello, la lógica binaria (<span class="badge">0</span> y <span class="badge">1</span>) es la base de la representación de datos.
+          Antes de programar, es clave distinguir dos herramientas que parecen similares pero cumplen funciones distintas.
         </p>
 
-        <pre class="os-diagram">                      SISTEMAS NUMERICOS
-                               |
-      +------------------------+------------------------+
-      |                        |                        |
-Sistema Decimal          Sistema Binario        Sistema Hexadecimal
- (Base 10: 0-9)           (Base 2: 0, 1)        (Base 16: 0-9, A-F)
-Lenguaje Humano          Lenguaje Maquina          Direccionamiento</pre>
-
-        <h3 class="topic-subtitle">Los sistemas posicionales</h3>
+        <h3 class="topic-subtitle">¿Qué representa cada uno?</h3>
         <ul class="feature-list">
-          <li><strong>Sistema Decimal (Base 10):</strong> usa diez simbolos (0-9), cada posicion representa potencias de 10.</li>
-          <li><strong>Sistema Binario (Base 2):</strong> usa 0 y 1; cada posicion representa potencias de 2.</li>
-          <li><strong>Sistema Hexadecimal (Base 16):</strong> usa 0-9 y A-F para resumir secuencias binarias largas.</li>
+          <li><strong>Diagrama de flujo:</strong> representa la secuencia lógica de acciones, decisiones y ciclos de un algoritmo.</li>
+          <li><strong>DFD (Diagrama de Flujo de Datos):</strong> representa cómo la información entra, se transforma, se almacena y sale del sistema.</li>
+          <li><strong>Enfoque clave:</strong> el diagrama de flujo describe <span class="badge">control</span>, el DFD describe <span class="badge">datos</span>.</li>
         </ul>
 
-        <h3 class="topic-subtitle">Conversion entre bases numericas</h3>
+        <h3 class="topic-subtitle">Diferencia práctica</h3>
         <ul class="feature-list">
-          <li><strong>Binario a Decimal:</strong> multiplicar cada bit por 2 elevado a su posicion y sumar resultados.
-            <pre class="os-diagram">1011₂ = (1 x 2^3) + (0 x 2^2) + (1 x 2^1) + (1 x 2^0) = 11₁₀</pre>
-          </li>
-          <li><strong>Decimal a Binario:</strong> divisiones sucesivas entre 2 y lectura inversa de residuos.
-            <pre class="os-diagram">25/2=12 r1
-12/2=6  r0
-6/2=3   r0
-3/2=1   r1
-Resultado: 11001₂</pre>
-          </li>
+          <li><strong>Si quieres saber qué se ejecuta primero, después y bajo qué condición:</strong> usa diagrama de flujo.</li>
+          <li><strong>Si quieres saber de dónde vienen los datos y a dónde van:</strong> usa DFD.</li>
+          <li><strong>En proyectos completos:</strong> ambos se complementan para diseñar soluciones más claras.</li>
         </ul>
 
-        <h3 class="topic-subtitle">Representacion de datos en memoria</h3>
-        <ul class="feature-list">
-          <li><strong>Bit:</strong> unidad minima de informacion (0 o 1).</li>
-          <li><strong>Byte:</strong> conjunto de 8 bits.</li>
-          <li><strong>Multipos digitales:</strong> KB = 1024 bytes, MB = 1024 KB, GB = 1024 MB, TB = 1024 GB.</li>
-        </ul>
+        <pre class="os-diagram">DIAGRAMA DE FLUJO (control)
+Inicio -> Leer datos -> Procesar -> Decidir -> Mostrar resultado -> Fin
+
+DFD (datos)
+Usuario -> [Captura] -> (Proceso) -> [Base de Datos] -> Reporte</pre>
       </section>
 
-      <section class="content-card reveal feature-panel flow-right" id="u3-tema2">
-        <h2 data-icon="🧠">2. Algoritmos y Diagramas de Flujo</h2>
+      <section class="content-card reveal feature-panel flow-right topic-odyssey-glyph" id="u3-tema2">
+        <h2 data-icon="🧩">2. Pseudocódigo con PSeInt</h2>
         <figure class="topic-visual topic-visual-split">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTax_lc0vYZyqKGktXT5zf3BS_qFFt-vcwR0Ki-y-YOavmMyefg9wpbxb7q&s=10" alt="Simbología de diagramas de flujo" loading="lazy" decoding="async" />
-          <img src="https://static.wixstatic.com/media/cae29b_605ea6fe171145e18a417e5965172462~mv2.webp/v1/fill/w_519,h_541,al_c,lg_1,q_80,enc_avif,quality_auto/cae29b_605ea6fe171145e18a417e5965172462~mv2.webp" alt="Ejemplo de diagrama de flujo de un algoritmo" loading="lazy" decoding="async" />
-          <figcaption>Simbología ANSI/ISO y un ejemplo real de diagrama de flujo.</figcaption>
-        </figure>
-        <p>
-          Un algoritmo es una secuencia ordenada, finita, precisa y no ambigua de pasos logicos que transforma entradas en salidas.
-        </p>
-
-        <h3 class="topic-subtitle">Propiedades fundamentales de un algoritmo</h3>
-        <ol class="feature-list ordered-list">
-          <li><strong>Precision:</strong> cada paso debe ser claro y sin ambiguedad.</li>
-          <li><strong>Finitud:</strong> el algoritmo termina tras un numero finito de pasos.</li>
-          <li><strong>Definicion:</strong> misma entrada implica mismo resultado.</li>
-          <li><strong>Estructura estandar:</strong> entrada, proceso y salida.</li>
-        </ol>
-
-        <h3 class="topic-subtitle">Diagramas de flujo</h3>
-        <pre class="os-diagram">       [ INICIO ]
-           |
-           v
-   / Leer valor de A /
-           |
-           v
-   [ Resultado = A * 2 ]
-           |
-           v
-      / ?A > 10? /
-      /          \
-  (Si) /          \ (No)
-      v            v
- [ Imprimir X ] [ Imprimir Y ]
-      \            /
-       v          v
-        ( FIN )</pre>
-
-        <h3 class="topic-subtitle">Simbologia ANSI/ISO</h3>
-        <ul class="feature-list">
-          <li><strong>Ovalo/Terminal:</strong> inicio y fin.</li>
-          <li><strong>Paralelogramo:</strong> entrada/salida de datos.</li>
-          <li><strong>Rectangulo:</strong> proceso o calculo.</li>
-          <li><strong>Rombo:</strong> decision logica (verdadero/falso).</li>
-          <li><strong>Flechas:</strong> sentido de ejecucion.</li>
-          <li><strong>Conector circular:</strong> enlaza tramos del diagrama.</li>
-        </ul>
-      </section>
-
-      <section class="content-card reveal feature-panel flow-left" id="u3-tema3">
-        <h2 data-icon="🛠️">3. Metodologia de Analisis, Diseno, Desarrollo y Evaluacion</h2>
-        <figure class="topic-visual topic-visual-split">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFa7W4o1FmqG6VKhCD-_4zwDElBDXVRgW9j8SRN_X3tlWlqAI5aqMo9q0&s=10" alt="Esquema entrada, proceso y salida de un algoritmo" loading="lazy" decoding="async" />
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwp4ffMqmmNN6_khbm5IksuFmcqRta3dAo7dj5CehRVg&s=10" alt="Herramienta de diseño de diagramas de flujo" loading="lazy" decoding="async" />
-          <figcaption>Modelo de entrada-proceso-salida y herramienta usada en la fase de diseño.</figcaption>
-        </figure>
-        <p>
-          El Ciclo de Vida del Desarrollo de Software (SDLC) organiza el trabajo para construir soluciones de calidad, escalables y mantenibles.
-        </p>
-
-        <pre class="os-diagram">+---------------------------------------------------------------+
-|                       1. ANALISIS                             |
-|          Comprender el problema y determinar inputs/outputs   |
-+---------------------------------------------------------------+
-                               |
-                               v
-+---------------------------------------------------------------+
-|                        2. DISENO                              |
-|           Estructurar la solucion (Diagramas / Algoritmos)    |
-+---------------------------------------------------------------+
-                               |
-                               v
-+---------------------------------------------------------------+
-|                      3. DESARROLLO                            |
-|             Traduccion a codigo en un lenguaje                |
-+---------------------------------------------------------------+
-                               |
-                               v
-+---------------------------------------------------------------+
-|                      4. EVALUACION                            |
-|           Pruebas de software, depuracion y validacion        |
-+---------------------------------------------------------------+</pre>
-
-        <h3 class="topic-subtitle">Fases del SDLC</h3>
-        <ul class="feature-list">
-          <li><strong>Fase 1 - Analisis:</strong> identificar entradas, procesos, salidas y restricciones del problema.</li>
-          <li><strong>Fase 2 - Diseno:</strong> definir la arquitectura logica con diagramas, pseudocodigo y estructura de datos.</li>
-          <li><strong>Fase 3 - Desarrollo:</strong> implementar el diseno en un lenguaje formal (Python, C++, JavaScript, etc.).</li>
-          <li><strong>Fase 4 - Evaluacion:</strong> pruebas, verificacion, validacion y depuracion de bugs.</li>
-        </ul>
-      </section>
-
-      <section class="content-card reveal feature-panel flow-right" id="u3-tema4">
-        <h2 data-icon="🧩">4. Diferenciacion de Conceptos Esenciales en Informatica</h2>
-        <figure class="topic-visual topic-visual-split">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGU9wLFn2EFpru1I_Hs3jomSKNjtRjFzpQtjPttvpB8ZWmGz7XP9FOfw8&s=10" alt="Logos de lenguajes de programación" loading="lazy" decoding="async" />
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVb3ruGuXAQCjabsAfM10B6FeG8evJ0t5lqOBX3J-6OFrQqsJOBHsDhRKM&s=10" alt="Código fuente en un editor" loading="lazy" decoding="async" />
-          <figcaption>Distintos lenguajes de programación y su sintaxis real en código.</figcaption>
-        </figure>
-        <h3 class="topic-subtitle">Software vs. Hardware</h3>
-        <ul class="feature-list">
-          <li><strong>Hardware:</strong> parte fisica y tangible del sistema informatico.</li>
-          <li><strong>Software:</strong> parte logica e intangible que indica al hardware que hacer.</li>
-        </ul>
-
-        <h3 class="topic-subtitle">Lenguajes compilados vs. interpretados</h3>
-        <ul class="feature-list">
-          <li><strong>Compilados (C, C++, Rust):</strong> generan ejecutable binario; mayor rendimiento, menor portabilidad directa.</li>
-          <li><strong>Interpretados (Python, JavaScript, Ruby):</strong> ejecucion linea por linea; desarrollo agil y facil depuracion.</li>
-        </ul>
-
-        <h3 class="topic-subtitle">Logica vs. sintaxis</h3>
-        <ul class="feature-list">
-          <li><strong>Logica de programacion:</strong> estructura universal para resolver problemas paso a paso.</li>
-          <li><strong>Sintaxis:</strong> reglas gramaticales especificas de cada lenguaje.</li>
-        </ul>
-      </section>
-
-      <section class="content-card reveal feature-panel flow-left" id="u3-tema5">
-        <h2 data-icon="💻">5. Introduccion a la Logica Programable con PSeInt</h2>
-        <figure class="topic-visual topic-visual-split">
-          <img src="https://elpythonista-static.b-cdn.net/wp-content/uploads/2020/10/Que_Es_Python-2-1024x576.jpg" alt="Python y transición desde pseudocódigo" loading="lazy" decoding="async" />
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiUt67nqQ6aSUOGtLUzNoFDpZWTPtbOpjevMVOAFRpYA&s=10" alt="Logo de PSeInt" loading="lazy" decoding="async" />
-          <figcaption>PSeInt como puente entre la lógica y el código real en Python.</figcaption>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVb3ruGuXAQCjabsAfM10B6FeG8evJ0t5lqOBX3J-6OFrQqsJOBHsDhRKM&s=10" alt="Pseudocódigo estructurado en un editor" loading="lazy" decoding="async" />
+          <figcaption>PSeInt permite practicar lógica algorítmica con pseudocódigo antes de la sintaxis de un lenguaje real.</figcaption>
         </figure>
         <p>
-          <span class="badge">PSeInt</span> es una herramienta educativa orientada a estudiantes hispanohablantes para desarrollar logica algoritmica antes de abordar sintaxis complejas.
+          El pseudocódigo expresa la solución en lenguaje humano estructurado. En PSeInt puedes probar esa lógica, detectar fallas y depurar antes de codificar en Python.
         </p>
 
-        <h3 class="topic-subtitle">Pseudocodigo como puente al codigo real</h3>
-        <p>
-          El pseudocodigo usa lenguaje natural y estructura de programacion para describir algoritmos de forma clara, facilitando la transicion a Python o C.
-        </p>
+        <h3 class="topic-subtitle">Principios prácticos en PSeInt</h3>
+        <ul class="feature-list">
+          <li><strong>Secuencia:</strong> escribir pasos en orden lógico, de entrada a salida.</li>
+          <li><strong>Selección:</strong> usar <span class="badge">Si</span>, <span class="badge">Sino</span> para decisiones.</li>
+          <li><strong>Iteración:</strong> aplicar <span class="badge">Mientras</span> y <span class="badge">Para</span> en repeticiones.</li>
+          <li><strong>Trazabilidad:</strong> verificar variables con prueba de escritorio antes de compilar.</li>
+          <li><strong>Claridad:</strong> nombres de variables significativos e indentación consistente.</li>
+        </ul>
 
-        <h3 class="topic-subtitle">Estructura general en PSeInt</h3>
-        <pre class="os-diagram"><code>Algoritmo CalcularPromedio
-    // Declaracion de variables
+        <h3 class="topic-subtitle">Ejemplo base en PSeInt</h3>
+        <pre class="os-diagram"><code>Algoritmo PromedioDosNotas
     Definir nota1, nota2, promedio Como Real
 
-    // Entrada de datos
     Escribir "Ingrese la primera nota:"
     Leer nota1
     Escribir "Ingrese la segunda nota:"
     Leer nota2
 
-    // Proceso
     promedio <- (nota1 + nota2) / 2
 
-    // Salida
-    Escribir "El promedio final es: ", promedio
+    Si promedio >= 7 Entonces
+        Escribir "Aprobado"
+    SiNo
+        Escribir "Reforzar contenidos"
+    FinSi
 FinAlgoritmo</code></pre>
+      </section>
 
-        <h3 class="topic-subtitle">Elementos basicos de PSeInt</h3>
-        <ol class="feature-list ordered-list">
-          <li><strong>Comentarios (//):</strong> notas para humanos, ignoradas por el interprete.</li>
-          <li><strong>Definicion de variables:</strong> reserva de memoria con tipo de dato.</li>
-          <li><strong>Escribir y Leer:</strong> salida de mensajes y captura de entrada del usuario.</li>
-          <li><strong>Asignacion (&lt;- o =):</strong> guarda en una variable el resultado de una expresion.</li>
-          <li><strong>Generacion de diagramas:</strong> conversion entre pseudocodigo y diagrama de flujo.</li>
-        </ol>
+      <section class="content-card reveal feature-panel flow-left topic-odyssey-python" id="u3-tema3">
+        <h2 data-icon="🐍">3. Implementación Final en Python</h2>
+        <figure class="topic-visual topic-visual-split">
+          <img src="https://elpythonista-static.b-cdn.net/wp-content/uploads/2020/10/Que_Es_Python-2-1024x576.jpg" alt="Lenguaje Python para programación estructurada" loading="lazy" decoding="async" />
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGU9wLFn2EFpru1I_Hs3jomSKNjtRjFzpQtjPttvpB8ZWmGz7XP9FOfw8&s=10" alt="Elementos de sintaxis en Python" loading="lazy" decoding="async" />
+          <figcaption>Python convierte la lógica diseñada en una solución ejecutable y comprobable.</figcaption>
+        </figure>
+        <p>
+          Cuando la lógica ya está validada en diagramas y pseudocódigo, Python permite implementar el algoritmo con una sintaxis clara, moderna y orientada a la lectura.
+        </p>
+
+        <h3 class="topic-subtitle">1. Conceptos Básicos de Python</h3>
+        <p>
+          Python destaca por su sintaxis limpia: no requiere declarar tipos explícitos ni usar punto y coma al final de cada línea.
+        </p>
+        <ul class="feature-list">
+          <li><strong>Variables y tipos de datos:</strong> se crean asignando valor directamente.</li>
+          <li><strong>int:</strong> enteros (ejemplo: <span class="badge">edad = 25</span>).</li>
+          <li><strong>float:</strong> decimales (ejemplo: <span class="badge">estatura = 1.75</span>).</li>
+          <li><strong>str:</strong> cadenas (ejemplo: <span class="badge">nombre = "Carlos"</span>).</li>
+          <li><strong>bool:</strong> booleanos (<span class="badge">True</span> o <span class="badge">False</span>).</li>
+          <li><strong>print():</strong> salida de datos en consola; permite usar f-strings.</li>
+          <li><strong>input():</strong> entrada de datos; para números se convierte con <span class="badge">int()</span> o <span class="badge">float()</span>.</li>
+          <li><strong>Indentación:</strong> Python usa sangría de 4 espacios para delimitar bloques.</li>
+        </ul>
+
+        <h3 class="topic-subtitle">Fragmento de código</h3>
+        <pre class="os-diagram"><code># 1. Entrada de datos y conversion de tipos
+nombre = input("Ingrese su nombre: ")
+edad = int(input("Ingrese su edad: "))
+estatura = float(input("Ingrese su estatura en metros: "))
+
+# 2. Asignacion directa y f-string para mostrar resultados
+es_mayor = edad >= 18
+
+print(f"Hola {nombre}, tienes {edad} anos, mides {estatura}m y eres mayor de edad: {es_mayor}")</code></pre>
+
+        <h3 class="topic-subtitle">2. Estructuras Condicionales (Toma de Decisiones)</h3>
+        <p>
+          Permiten ejecutar bloques de código según el cumplimiento de condiciones lógicas (<span class="badge">True</span> o <span class="badge">False</span>).
+        </p>
+
+        <h3 class="topic-subtitle">A. Condicional simple y compuesto (if - else)</h3>
+        <ul class="feature-list">
+          <li><strong>if:</strong> se ejecuta si la condición es verdadera.</li>
+          <li><strong>else:</strong> se ejecuta si la condición del if es falsa.</li>
+        </ul>
+        <pre class="os-diagram"><code>edad = int(input("Ingrese su edad: "))
+
+# Evaluacion de la condicion
+if edad >= 18:
+    print("Eres mayor de edad. Puedes ingresar.")
+else:
+    print("Eres menor de edad. Acceso denegado.")</code></pre>
+
+        <h3 class="topic-subtitle">B. Condicional anidado y múltiple (if - elif - else)</h3>
+        <p>
+          En Python, en lugar de anidar muchos if o usar Segun, se utiliza <span class="badge">elif</span> para evaluar condiciones en secuencia.
+        </p>
+        <pre class="os-diagram"><code>nota = float(input("Ingrese su nota (0.0 a 10.0): "))
+
+if nota >= 9.0:
+    print("Excelente")
+elif nota >= 7.0:
+    print("Aprobado")
+elif nota >= 5.0:
+    print("Recuperacion")
+else:
+    print("Reprobado")</code></pre>
+
+        <h3 class="topic-subtitle">C. Coincidencia de patrones (match - case)</h3>
+        <p>
+          Desde Python 3.10, <span class="badge">match - case</span> funciona como equivalente de Segun en PSeInt.
+        </p>
+        <pre class="os-diagram"><code>opcion = int(input("MENU:\n1. Saludar\n2. Despedirse\nSeleccione una opcion: "))
+
+match opcion:
+    case 1:
+        print("Hola. Bienvenido al programa.")
+    case 2:
+        print("Hasta luego. Que tengas un buen dia.")
+    case _:
+        print("Opcion no valida.")</code></pre>
+
+        <h3 class="topic-subtitle">3. Estructuras Repetitivas (Ciclos o Bucles)</h3>
+        <p>
+          Python utiliza principalmente dos ciclos: <span class="badge">while</span> y <span class="badge">for</span>.
+        </p>
+
+        <h3 class="topic-subtitle">A. Ciclo while (Mientras)</h3>
+        <p>
+          Evalúa una condición antes de cada iteración y se repite mientras sea verdadera.
+        </p>
+        <pre class="os-diagram"><code>contador = 1
+
+# Mientras la condicion sea verdadera, el ciclo continua
+while contador <= 5:
+    print(f"Contador actual: {contador}")
+    contador += 1  # Equivalente a: contador = contador + 1</code></pre>
+
+        <div class="info-panel">
+          <strong>Nota:</strong> para simular Repetir...Hasta Que de PSeInt, se suele usar un bucle while True con break.
+        </div>
+        <pre class="os-diagram"><code>while True:
+    clave = int(input("Ingrese la clave (1234): "))
+    if clave == 1234:
+        print("Acceso concedido")
+        break  # Sale del ciclo inmediatamente
+    print("Clave incorrecta. Intente de nuevo.")</code></pre>
+
+        <h3 class="topic-subtitle">B. Ciclo for (Para)</h3>
+        <p>
+          En Python, for recorre secuencias. Para simular el Para clásico, se usa <span class="badge">range(inicio, fin, paso)</span>.
+        </p>
+        <pre class="os-diagram"><code># Ejemplo 1: Recorrer un rango del 1 al 5
+print("--- Conteo del 1 al 5 ---")
+for i in range(1, 6):  # El limite superior (6) no se incluye
+    print(f"Iteracion numero {i}")
+
+# Ejemplo 2: Paso de 2 en 2
+print("--- Numeros pares del 2 al 10 ---")
+for i in range(2, 11, 2):
+    print(i)</code></pre>
+
+        <h3 class="topic-subtitle">Comparativa Directa: PSeInt vs Python</h3>
+        <div class="syntax-table-wrapper">
+          <table class="syntax-table">
+            <thead>
+              <tr>
+                <th>Concepto</th>
+                <th>PSeInt</th>
+                <th>Python</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mostrar en pantalla</td>
+                <td><code>Escribir "Texto"</code></td>
+                <td><code>print("Texto")</code></td>
+              </tr>
+              <tr>
+                <td>Pedir dato</td>
+                <td><code>Leer variable</code></td>
+                <td><code>variable = input()</code></td>
+              </tr>
+              <tr>
+                <td>Convertir a entero</td>
+                <td>Automático</td>
+                <td><code>int(variable)</code></td>
+              </tr>
+              <tr>
+                <td>Si / Sino</td>
+                <td><code>Si cond Entonces ... Sino ... FinSi</code></td>
+                <td><code>if cond: ... else: ...</code></td>
+              </tr>
+              <tr>
+                <td>Si anidado</td>
+                <td><code>Si ... Sino Si ... FinSi</code></td>
+                <td><code>if ... elif ... else: ...</code></td>
+              </tr>
+              <tr>
+                <td>Segun</td>
+                <td><code>Segun var Hacer ... FinSegun</code></td>
+                <td><code>match var: case ...</code></td>
+              </tr>
+              <tr>
+                <td>Mientras</td>
+                <td><code>Mientras cond Hacer ... FinMientras</code></td>
+                <td><code>while cond:</code></td>
+              </tr>
+              <tr>
+                <td>Para</td>
+                <td><code>Para i &lt;- 1 Hasta N Con Paso 1 Hacer</code></td>
+                <td><code>for i in range(1, N + 1):</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="info-panel">
+          <strong>Cierre de la unidad:</strong> primero modelas el proceso, luego validas lógica en PSeInt y finalmente implementas con Python.
+        </div>
       </section>
 
       <section class="content-card reveal trivia-hub" data-unit="unidad3">
@@ -305,49 +355,24 @@ FinAlgoritmo</code></pre>
         <h2>Recursos destacados de la Unidad 3</h2>
         <div class="unit3-gallery">
           <figure class="gallery-item">
-            <img src="https://elpythonista-static.b-cdn.net/wp-content/uploads/2020/10/Que_Es_Python-2-1024x576.jpg" alt="Concepto general de Python" loading="lazy" decoding="async" />
-            <figcaption>Introducción a Python como lenguaje base para programación estructurada.</figcaption>
+            <img src="https://www.visual-paradigm.com/guide/data-flow-diagram/what-is-data-flow-diagram/dfd-level-0-example.png" alt="Modelo de diagrama de flujo de datos" loading="lazy" decoding="async" />
+            <figcaption>Diferenciación visual del DFD para analizar movimiento de información.</figcaption>
           </figure>
           <figure class="gallery-item">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFa7W4o1FmqG6VKhCD-_4zwDElBDXVRgW9j8SRN_X3tlWlqAI5aqMo9q0&s=10" alt="Proceso de diseño de algoritmos" loading="lazy" decoding="async" />
-            <figcaption>Diseño de soluciones con lógica clara y enfoque por etapas.</figcaption>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiUt67nqQ6aSUOGtLUzNoFDpZWTPtbOpjevMVOAFRpYA&s=10" alt="Herramienta PSeInt" loading="lazy" decoding="async" />
+            <figcaption>PSeInt como puente pedagógico entre lógica y programación.</figcaption>
           </figure>
           <figure class="gallery-item">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR22Gr1PhS-pmcU_vGuuDsfO6ZtO1y8_5tZsvMZQxQSmNcB1ytyjr70RWFO&s=10" alt="Representación de datos binarios" loading="lazy" decoding="async" />
-            <figcaption>Representación digital en binario para comprender la base de cómputo.</figcaption>
+            <img src="https://elpythonista-static.b-cdn.net/wp-content/uploads/2020/10/Que_Es_Python-2-1024x576.jpg" alt="Introducción a Python" loading="lazy" decoding="async" />
+            <figcaption>Python como etapa final de implementación del algoritmo.</figcaption>
           </figure>
           <figure class="gallery-item">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVb3ruGuXAQCjabsAfM10B6FeG8evJ0t5lqOBX3J-6OFrQqsJOBHsDhRKM&s=10" alt="Código fuente en un editor" loading="lazy" decoding="async" />
-            <figcaption>Traducción final de la lógica a código real y ejecutable.</figcaption>
+            <figcaption>Código real y depuración de resultados para cerrar el ciclo de aprendizaje.</figcaption>
           </figure>
         </div>
       </section>
 
-      <section class="content-card reveal" id="u3-formulario-final">
-        <p class="eyebrow">Formulario final</p>
-        <h2>Comparte tu avance de la Unidad 3</h2>
-        <p>Envía tus comentarios o dudas finales y te responderé con recomendaciones para seguir mejorando.</p>
-
-        <form class="contact-form" id="contact-form" action="/contacto" method="post">
-          <label>
-            Nombre
-            <input type="text" name="nombre" required />
-          </label>
-
-          <label>
-            Correo
-            <input type="email" name="correo" required />
-          </label>
-
-          <label>
-            Mensaje
-            <textarea name="mensaje" rows="5" required></textarea>
-          </label>
-
-          <button class="btn btn-primary" type="submit">Enviar mensaje</button>
-          <p id="form-message" class="form-message"></p>
-        </form>
-      </section>
     </main>
   </div>
   <footer class="footer">
