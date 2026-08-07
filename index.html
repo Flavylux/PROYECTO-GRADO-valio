@@ -28,25 +28,22 @@
 
       <nav class="nav" aria-label="Navegación principal">
         <a class="nav-link" href="#inicio">Inicio</a>
-        <a class="nav-link" href="#info">Información</a>
-        <a class="nav-link" href="#unidad1">Unidad 1</a>
-        <a class="nav-link" href="#unidad2">Unidad 2</a>
-        <a class="nav-link" href="#unidad3">Unidad 3</a>
+        <a class="nav-link" href="#sobre-mi">Sobre mí</a>
+        <a class="nav-link" href="#academico">Académico</a>
+        <a class="nav-link" href="#referencias">Referencias</a>
       </nav>
     </header>
 
     <main>
       <section class="hero" id="inicio">
         <div class="hero-content reveal">
-          <p class="eyebrow">Portafolio personal • Programación</p>
-          <h1>Bienvenido a mi espacio personal</h1>
-          <p>
-            Aquí comparto una parte de mi identidad, mis intereses y lo que me motiva a seguir aprendiendo.
-            Me gusta la programación porque me permite crear soluciones, automatizar procesos y transformar ideas en realidad.
-          </p>
+          <p class="eyebrow">Portafolio Académico UTC</p>
+          <h1>Andrés Plazarte</h1>
+          <h2 class="hero-subtitle">Estudiante de Ingeniería en Software | Universidad Técnica de Cotopaxi (UTC)</h2>
+          <p class="hero-location">Cotopaxi, Ecuador</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#info">Información y hobbies</a>
-            <a class="btn btn-secondary" href="#unidad1">Ver unidades</a>
+            <a class="btn btn-primary" href="#sobre-mi">Sobre mí</a>
+            <a class="btn btn-secondary" href="#academico">Ver unidades</a>
             <a class="btn btn-secondary" href="/contacto">Contacto</a>
           </div>
         </div>
@@ -78,50 +75,79 @@
         </div>
       </section>
 
-      <section class="content-card reveal" id="info">
-        <h2>¡Hola! Me llamo <span class="highlight">Andrés Plazarte</span></h2>
-        <p>
-          Me gusta la historia porque siento que uno debería ser parte de ella y del mundo que lo rodea. Aprender de otras personas, culturas y relatos me ayuda a crecer y a comprender mejor la vida.
-          Además, me gusta escribir, principalmente poemas e historias, porque encuentro en la palabra una forma de expresar emociones, ideas y experiencias.
-          También me gusta ayudar a los demás, porque sé lo que se siente no recibir apoyo cuando más se necesita.
-          Estudio programación porque me interesa automatizar procesos y crear herramientas que faciliten la vida de las personas.
-        </p>
+      <section class="content-card reveal section-animate" id="sobre-mi">
+        <p class="eyebrow">Perfil académico y personal</p>
+        <h2>Sobre Mí</h2>
+        <div class="profile-grid">
+          <ul class="profile-list" aria-label="Datos del estudiante">
+            <li><strong>Institución Educativa:</strong> Universidad Técnica de Cotopaxi (UTC)</li>
+            <li><strong>Carrera:</strong> Ingeniería en Software</li>
+            <li><strong>Ubicación:</strong> Cotopaxi, Ecuador</li>
+          </ul>
+          <div>
+            <img id="about-photo" class="profile-photo hidden" src="" alt="Imagen de perfil de Andrés Plazarte" loading="lazy" decoding="async" />
+            <p class="profile-bio">
+              ¡Hola! Soy Andrés Plazarte, estudiante de Ingeniería en Software en la Universidad Técnica de Cotopaxi. Aunque el código y la tecnología son mi campo de formación actual, mi verdadera vocación radica en el impacto social, la enseñanza y el estudio de la historia.
+            </p>
+            <p class="profile-bio">
+              Veo en la programación la vía perfecta para construir una base profesional sólida, adquirir disciplina técnica y generar recursos que me permitan en el futuro explorar disciplinas como la medicina o la pedagogía para ayudar directamente a los demás.
+            </p>
+          </div>
+        </div>
         <div class="info-panel" id="api-info">
           <p class="eyebrow">Dato dinámico</p>
           <p>Cargando información externa...</p>
         </div>
       </section>
 
-      <section class="units-grid">
-        <section class="unit-card reveal" id="unidad1">
-          <div class="unit-badge">1</div>
-          <h3>Unidad 1</h3>
-          <p>Exploración de conceptos iniciales, bases fundamentales y primeros pasos para construir con claridad y orden.</p>
-          <div class="stars" aria-label="5 estrellas">★★★★★</div>
-          <a class="btn btn-secondary" href="unidad1.html">Ver más</a>
-        </section>
+      <section class="content-card reveal section-animate" id="academico">
+        <p class="eyebrow">Portafolio académico</p>
+        <h2>Programación Básica y Algoritmia</h2>
+        <p>
+          Resumen estructurado del semestre con enfoque en fundamentos teóricos, lógica computacional y programación estructurada.
+        </p>
 
-        <section class="unit-card reveal" id="unidad2">
-          <div class="unit-badge">2</div>
-          <h3>Unidad 2</h3>
-          <p>Aplicación práctica de ideas, desarrollo de habilidades y comprensión más profunda del proceso.</p>
-          <div class="stars" aria-label="3 estrellas">★★★☆☆</div>
-          <a class="btn btn-secondary" href="unidad2.html">Ver más</a>
-        </section>
+        <div class="units-grid academic-grid" id="units-container" aria-live="polite"></div>
+      </section>
 
-        <section class="unit-card reveal" id="unidad3">
-          <div class="unit-badge">3</div>
-          <h3>Unidad 3</h3>
-          <p>Integración de conocimientos, creatividad y mejora continua para lograr resultados más sólidos.</p>
-          <div class="stars" aria-label="4 estrellas">★★★★☆</div>
-          <a class="btn btn-secondary" href="unidad3.html">Ver más</a>
-        </section>
+      <section class="content-card reveal section-animate" id="referencias">
+        <p class="eyebrow">Fuentes de internet</p>
+        <h2>Bibliografía y recursos de consulta</h2>
+        <p>
+          Esta sección reúne referencias confiables para profundizar en historia de la computación, fundamentos de programación y lenguaje Python.
+        </p>
+
+        <div class="refs-grid">
+          <article class="ref-card">
+            <h3>Historia de la computación</h3>
+            <ul class="ref-list">
+              <li><a href="https://www.britannica.com/technology/computer" target="_blank" rel="noopener noreferrer">Encyclopaedia Britannica - Computer | evolución histórica de la computación.</a></li>
+              <li><a href="https://www.computerhistory.org/timeline/computers/" target="_blank" rel="noopener noreferrer">Computer History Museum - Computer Timeline.</a></li>
+            </ul>
+          </article>
+
+          <article class="ref-card">
+            <h3>Algoritmos y pensamiento computacional</h3>
+            <ul class="ref-list">
+              <li><a href="https://www.geeksforgeeks.org/what-is-an-algorithm-definition-types-complexity-examples/" target="_blank" rel="noopener noreferrer">GeeksforGeeks - Definición y fundamentos de algoritmos.</a></li>
+              <li><a href="https://www.ibm.com/think/topics/computational-thinking" target="_blank" rel="noopener noreferrer">IBM Think - Computational Thinking.</a></li>
+            </ul>
+          </article>
+
+          <article class="ref-card">
+            <h3>Python y documentación oficial</h3>
+            <ul class="ref-list">
+              <li><a href="https://docs.python.org/3/tutorial/" target="_blank" rel="noopener noreferrer">Python Docs - Tutorial oficial de Python.</a></li>
+              <li><a href="https://www.python.org/about/gettingstarted/" target="_blank" rel="noopener noreferrer">Python.org - Getting Started.</a></li>
+            </ul>
+          </article>
+        </div>
       </section>
     </main>
   </div>
 
   <footer class="footer">
-    <p>© <span id="year"></span> Andrés Plazarte</p>
+    <p>© Andrés Plazarte - Portafolio Académico UTC | Cotopaxi, Ecuador.</p>
   </footer>
 
   <script src="script.js"></script>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <base href="/" />
-  <title>Unidad 3 - Integración</title>
+  <title>Unidad 3 - Lógica y Metodología</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -28,16 +28,16 @@
         <a class="nav-link" href="index.html">Inicio</a>
         <a class="nav-link" href="unidad1.html">Unidad 1</a>
         <a class="nav-link" href="unidad2.html">Unidad 2</a>
-        <a class="nav-link" href="unidad3.html">Unidad 3</a>
+        <a class="nav-link active" href="unidad3.html">Unidad 3</a>
       </nav>
     </header>
     <main>
       <section class="hero">
         <div class="hero-content reveal">
-          <p class="eyebrow">Unidad 3 • Integración</p>
-          <h1>Unir conocimientos para lograr resultados sólidos</h1>
+          <p class="eyebrow">Unidad 3 • Fundamentos de Lógica y Metodología de Desarrollo</p>
+          <h1>Sistemas numéricos, algoritmos y diseño de soluciones</h1>
           <p>
-            En esta unidad se busca consolidar todo lo aprendido, promoviendo la creatividad y la mejora continua para producir trabajos más completos.
+            Esta unidad profundiza en la representación binaria, el modelado con diagramas de flujo, el ciclo de vida del software y la transición a la lógica programable con PSeInt.
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="index.html">Volver al inicio</a>
@@ -67,34 +67,213 @@
             <span class="unit-index-number">03</span>
             <div>
               <h3>Unidad 3</h3>
-              <p>Integración y resultados</p>
+              <p>Lógica y metodología</p>
             </div>
           </a>
         </div>
       </section>
 
-      <section class="content-card reveal activity-card">
-        <p class="eyebrow">Dinámica de cierre</p>
-        <h2>Juego de integración</h2>
-        <p>Selecciona la opción que mejor demuestra que ya conectaste ideas y soluciones:</p>
-        <div class="activity-options" role="group" aria-label="Opciones de respuesta">
-          <button class="activity-option" data-correct="false">Aprender sin probar nada</button>
-          <button class="activity-option" data-correct="true">Unir ideas y comprobar resultados</button>
-          <button class="activity-option" data-correct="false">Evitar corregir errores</button>
-        </div>
-        <p id="activity-feedback-3" class="quiz-feedback">Elige una respuesta.</p>
+      <section class="content-card reveal trivia-hub" data-unit="unidad3">
+        <p class="eyebrow">Juego de trivia</p>
+        <h2>Reto rápido de la Unidad 3</h2>
+        <div class="trivia-game"></div>
       </section>
 
-      <section class="content-card reveal">
-        <h2>Resultados esperados</h2>
+      <section class="content-card reveal feature-panel flow-left">
+        <h2 data-icon="🔢">1. Sistemas de Numeración y Código Binario</h2>
+        <figure class="topic-visual">
+          <img src="https://codelearn.es/wp-content/uploads/sites/4/2022/09/binary-code.jpg" alt="Código binario y sistemas de numeración" loading="lazy" decoding="async" />
+          <figcaption>Representación digital de datos en base 2 y base 16.</figcaption>
+        </figure>
         <p>
-          Aquí se integran los conocimientos previos con nuevas ideas para lograr un desempeño más completo y profesional.
+          La computadora está compuesta por miles de millones de transistores que reconocen dos estados físicos: presencia o ausencia de tensión eléctrica. Por ello, la lógica binaria (<span class="badge">0</span> y <span class="badge">1</span>) es la base de la representación de datos.
         </p>
-        <ul>
-          <li>Integración de conocimientos</li>
-          <li>Creatividad y mejora continua</li>
-          <li>Presentación de resultados</li>
+
+        <pre class="os-diagram">                      SISTEMAS NUMERICOS
+                               |
+      +------------------------+------------------------+
+      |                        |                        |
+Sistema Decimal          Sistema Binario        Sistema Hexadecimal
+ (Base 10: 0-9)           (Base 2: 0, 1)        (Base 16: 0-9, A-F)
+Lenguaje Humano          Lenguaje Maquina          Direccionamiento</pre>
+
+        <h3 class="topic-subtitle">Los sistemas posicionales</h3>
+        <ul class="feature-list">
+          <li><strong>Sistema Decimal (Base 10):</strong> usa diez simbolos (0-9), cada posicion representa potencias de 10.</li>
+          <li><strong>Sistema Binario (Base 2):</strong> usa 0 y 1; cada posicion representa potencias de 2.</li>
+          <li><strong>Sistema Hexadecimal (Base 16):</strong> usa 0-9 y A-F para resumir secuencias binarias largas.</li>
         </ul>
+
+        <h3 class="topic-subtitle">Conversion entre bases numericas</h3>
+        <ul class="feature-list">
+          <li><strong>Binario a Decimal:</strong> multiplicar cada bit por 2 elevado a su posicion y sumar resultados.
+            <pre class="os-diagram">1011₂ = (1 x 2^3) + (0 x 2^2) + (1 x 2^1) + (1 x 2^0) = 11₁₀</pre>
+          </li>
+          <li><strong>Decimal a Binario:</strong> divisiones sucesivas entre 2 y lectura inversa de residuos.
+            <pre class="os-diagram">25/2=12 r1
+12/2=6  r0
+6/2=3   r0
+3/2=1   r1
+Resultado: 11001₂</pre>
+          </li>
+        </ul>
+
+        <h3 class="topic-subtitle">Representacion de datos en memoria</h3>
+        <ul class="feature-list">
+          <li><strong>Bit:</strong> unidad minima de informacion (0 o 1).</li>
+          <li><strong>Byte:</strong> conjunto de 8 bits.</li>
+          <li><strong>Multipos digitales:</strong> KB = 1024 bytes, MB = 1024 KB, GB = 1024 MB, TB = 1024 GB.</li>
+        </ul>
+      </section>
+
+      <section class="content-card reveal feature-panel flow-right">
+        <h2 data-icon="🧠">2. Algoritmos y Diagramas de Flujo</h2>
+        <figure class="topic-visual">
+          <img src="https://static.wixstatic.com/media/cae29b_605ea6fe171145e18a417e5965172462~mv2.webp/v1/fill/w_519,h_541,al_c,lg_1,q_80,enc_avif,quality_auto/cae29b_605ea6fe171145e18a417e5965172462~mv2.webp" alt="Diagrama de flujo de algoritmo" loading="lazy" decoding="async" />
+          <figcaption>Estructura visual para modelar decisiones y procesos.</figcaption>
+        </figure>
+        <p>
+          Un algoritmo es una secuencia ordenada, finita, precisa y no ambigua de pasos logicos que transforma entradas en salidas.
+        </p>
+
+        <h3 class="topic-subtitle">Propiedades fundamentales de un algoritmo</h3>
+        <ol class="feature-list ordered-list">
+          <li><strong>Precision:</strong> cada paso debe ser claro y sin ambiguedad.</li>
+          <li><strong>Finitud:</strong> el algoritmo termina tras un numero finito de pasos.</li>
+          <li><strong>Definicion:</strong> misma entrada implica mismo resultado.</li>
+          <li><strong>Estructura estandar:</strong> entrada, proceso y salida.</li>
+        </ol>
+
+        <h3 class="topic-subtitle">Diagramas de flujo</h3>
+        <pre class="os-diagram">       [ INICIO ]
+           |
+           v
+   / Leer valor de A /
+           |
+           v
+   [ Resultado = A * 2 ]
+           |
+           v
+      / ?A > 10? /
+      /          \
+  (Si) /          \ (No)
+      v            v
+ [ Imprimir X ] [ Imprimir Y ]
+      \            /
+       v          v
+        ( FIN )</pre>
+
+        <h3 class="topic-subtitle">Simbologia ANSI/ISO</h3>
+        <ul class="feature-list">
+          <li><strong>Ovalo/Terminal:</strong> inicio y fin.</li>
+          <li><strong>Paralelogramo:</strong> entrada/salida de datos.</li>
+          <li><strong>Rectangulo:</strong> proceso o calculo.</li>
+          <li><strong>Rombo:</strong> decision logica (verdadero/falso).</li>
+          <li><strong>Flechas:</strong> sentido de ejecucion.</li>
+          <li><strong>Conector circular:</strong> enlaza tramos del diagrama.</li>
+        </ul>
+      </section>
+
+      <section class="content-card reveal feature-panel flow-left">
+        <h2 data-icon="🛠️">3. Metodologia de Analisis, Diseno, Desarrollo y Evaluacion</h2>
+        <p>
+          El Ciclo de Vida del Desarrollo de Software (SDLC) organiza el trabajo para construir soluciones de calidad, escalables y mantenibles.
+        </p>
+
+        <pre class="os-diagram">+---------------------------------------------------------------+
+|                       1. ANALISIS                             |
+|          Comprender el problema y determinar inputs/outputs   |
++---------------------------------------------------------------+
+                               |
+                               v
++---------------------------------------------------------------+
+|                        2. DISENO                              |
+|           Estructurar la solucion (Diagramas / Algoritmos)    |
++---------------------------------------------------------------+
+                               |
+                               v
++---------------------------------------------------------------+
+|                      3. DESARROLLO                            |
+|             Traduccion a codigo en un lenguaje                |
++---------------------------------------------------------------+
+                               |
+                               v
++---------------------------------------------------------------+
+|                      4. EVALUACION                            |
+|           Pruebas de software, depuracion y validacion        |
++---------------------------------------------------------------+</pre>
+
+        <h3 class="topic-subtitle">Fases del SDLC</h3>
+        <ul class="feature-list">
+          <li><strong>Fase 1 - Analisis:</strong> identificar entradas, procesos, salidas y restricciones del problema.</li>
+          <li><strong>Fase 2 - Diseno:</strong> definir la arquitectura logica con diagramas, pseudocodigo y estructura de datos.</li>
+          <li><strong>Fase 3 - Desarrollo:</strong> implementar el diseno en un lenguaje formal (Python, C++, JavaScript, etc.).</li>
+          <li><strong>Fase 4 - Evaluacion:</strong> pruebas, verificacion, validacion y depuracion de bugs.</li>
+        </ul>
+      </section>
+
+      <section class="content-card reveal feature-panel flow-right">
+        <h2 data-icon="🧩">4. Diferenciacion de Conceptos Esenciales en Informatica</h2>
+        <h3 class="topic-subtitle">Software vs. Hardware</h3>
+        <ul class="feature-list">
+          <li><strong>Hardware:</strong> parte fisica y tangible del sistema informatico.</li>
+          <li><strong>Software:</strong> parte logica e intangible que indica al hardware que hacer.</li>
+        </ul>
+
+        <h3 class="topic-subtitle">Lenguajes compilados vs. interpretados</h3>
+        <ul class="feature-list">
+          <li><strong>Compilados (C, C++, Rust):</strong> generan ejecutable binario; mayor rendimiento, menor portabilidad directa.</li>
+          <li><strong>Interpretados (Python, JavaScript, Ruby):</strong> ejecucion linea por linea; desarrollo agil y facil depuracion.</li>
+        </ul>
+
+        <h3 class="topic-subtitle">Logica vs. sintaxis</h3>
+        <ul class="feature-list">
+          <li><strong>Logica de programacion:</strong> estructura universal para resolver problemas paso a paso.</li>
+          <li><strong>Sintaxis:</strong> reglas gramaticales especificas de cada lenguaje.</li>
+        </ul>
+      </section>
+
+      <section class="content-card reveal feature-panel flow-left">
+        <h2 data-icon="💻">5. Introduccion a la Logica Programable con PSeInt</h2>
+        <figure class="topic-visual">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrsQYmBv4uiQSy4G3PwImQJAclMJ-BIhDfOlaigbOsUQ&s=10" alt="PSeInt y pseudocódigo" loading="lazy" decoding="async" />
+          <figcaption>PSeInt como puente entre la lógica y el código real.</figcaption>
+        </figure>
+        <p>
+          <span class="badge">PSeInt</span> es una herramienta educativa orientada a estudiantes hispanohablantes para desarrollar logica algoritmica antes de abordar sintaxis complejas.
+        </p>
+
+        <h3 class="topic-subtitle">Pseudocodigo como puente al codigo real</h3>
+        <p>
+          El pseudocodigo usa lenguaje natural y estructura de programacion para describir algoritmos de forma clara, facilitando la transicion a Python o C.
+        </p>
+
+        <h3 class="topic-subtitle">Estructura general en PSeInt</h3>
+        <pre class="os-diagram"><code>Algoritmo CalcularPromedio
+    // Declaracion de variables
+    Definir nota1, nota2, promedio Como Real
+
+    // Entrada de datos
+    Escribir "Ingrese la primera nota:"
+    Leer nota1
+    Escribir "Ingrese la segunda nota:"
+    Leer nota2
+
+    // Proceso
+    promedio <- (nota1 + nota2) / 2
+
+    // Salida
+    Escribir "El promedio final es: ", promedio
+FinAlgoritmo</code></pre>
+
+        <h3 class="topic-subtitle">Elementos basicos de PSeInt</h3>
+        <ol class="feature-list ordered-list">
+          <li><strong>Comentarios (//):</strong> notas para humanos, ignoradas por el interprete.</li>
+          <li><strong>Definicion de variables:</strong> reserva de memoria con tipo de dato.</li>
+          <li><strong>Escribir y Leer:</strong> salida de mensajes y captura de entrada del usuario.</li>
+          <li><strong>Asignacion (&lt;- o =):</strong> guarda en una variable el resultado de una expresion.</li>
+          <li><strong>Generacion de diagramas:</strong> conversion entre pseudocodigo y diagrama de flujo.</li>
+        </ol>
       </section>
     </main>
   </div>

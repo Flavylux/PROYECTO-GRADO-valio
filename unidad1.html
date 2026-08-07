@@ -7,7 +7,7 @@
   <title>Unidad 1 - Fundamentos</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="unit1-page">
   <div class="background-glow glow-one"></div>
   <div class="background-glow glow-two"></div>
   <div class="page-shell">
@@ -26,7 +26,7 @@
       </a>
       <nav class="nav" aria-label="Navegación secundaria">
         <a class="nav-link" href="index.html">Inicio</a>
-        <a class="nav-link" href="unidad1.html">Unidad 1</a>
+        <a class="nav-link active" href="unidad1.html">Unidad 1</a>
         <a class="nav-link" href="unidad2.html">Unidad 2</a>
         <a class="nav-link" href="unidad3.html">Unidad 3</a>
       </nav>
@@ -34,10 +34,10 @@
     <main>
       <section class="hero">
         <div class="hero-content reveal">
-          <p class="eyebrow">Unidad 1 • Fundamentos</p>
-          <h1>Conceptos básicos para empezar con claridad</h1>
+          <p class="eyebrow">Unidad 1 • Introducción al Mundo de la Programación</p>
+          <h1>Bases históricas y tecnológicas de la informática</h1>
           <p>
-            En esta unidad se exploran las bases esenciales del tema, comprendiendo lo importante de organizar ideas, establecer objetivos y construir desde un punto sólido.
+            Esta unidad presenta el origen del pensamiento algorítmico, la evolución de las computadoras y los fundamentos de los sistemas operativos como punto de partida para la formación en programación.
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="index.html">Volver al inicio</a>
@@ -73,62 +73,169 @@
         </div>
       </section>
 
-      <section class="content-card reveal quiz-card">
-        <p class="eyebrow">Dinámica interactiva</p>
-        <h2>Trivia de conceptos básicos</h2>
-        <p class="quiz-title">¿Qué es programación?</p>
-        <div class="quiz-options" role="group" aria-label="Opciones de respuesta">
-          <button class="quiz-option" data-correct="false">Un deporte</button>
-          <button class="quiz-option" data-correct="true">Escribir instrucciones para que una computadora realice tareas</button>
-          <button class="quiz-option" data-correct="false">Una canción</button>
-          <button class="quiz-option" data-correct="false">Un tipo de comida</button>
-        </div>
-        <p id="quiz-feedback" class="quiz-feedback">Elige una respuesta.</p>
-        <button id="retry-btn" class="btn btn-secondary quiz-retry hidden">Intentar otra vez</button>
+      <section class="content-card reveal trivia-hub" data-unit="unidad1">
+        <p class="eyebrow">Juego de trivia</p>
+        <h2>Reto rápido de la Unidad 1</h2>
+        <div class="trivia-game"></div>
       </section>
 
-      <section class="content-card reveal feature-panel">
-        <h2 data-icon="💡">1. ¿Qué es la programación?</h2>
+      <section class="content-card reveal feature-panel tone-cyan flow-left">
+        <h2 data-icon="📘">1. Contexto Histórico y los Pioneros de la Computación</h2>
+        <figure class="topic-visual">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKfrWmMA9izOeTIkxTKrjK87MzHar868qFTFTWeW5bHg&s" alt="Línea histórica de la computación" loading="lazy" decoding="async" />
+          <figcaption>Orígenes mecánicos y primeros saltos conceptuales.</figcaption>
+        </figure>
         <p>
-          La programación es el proceso de escribir instrucciones para que una computadora realice tareas específicas. Estas instrucciones se organizan en algoritmos y se traducen a un lenguaje de programación para construir soluciones útiles, desde aplicaciones sencillas hasta sistemas complejos.
+          La historia de la programación y la informática no comienza con la invención de los chips de silicio o las pantallas digitales, sino con la constante necesidad humana de automatizar cálculos complejos, procesar información y crear mecanismos capaces de ejecutar instrucciones sin intervención manual directa.
         </p>
-        <p>
-          Programar también implica pensar de forma lógica, descomponer problemas grandes en partes pequeñas y encontrar pasos claros para llegar a una respuesta. Por esa razón, aprender programación fortalece habilidades como el razonamiento, la creatividad y la resolución de problemas.
-        </p>
-        <p class="feature-highlight">La programación permite transformar ideas en herramientas reales.</p>
+
+        <h3 class="topic-subtitle">De los orígenes mecánicos a la era del cálculo</h3>
         <ul class="feature-list">
-          <li><strong>Algoritmos:</strong> secuencias de pasos para resolver un problema.</li>
-          <li><strong>Lenguajes de programación:</strong> herramientas que permiten traducir ideas a instrucciones comprensibles para la máquina.</li>
-          <li><strong>Aplicaciones:</strong> desde páginas web hasta videojuegos, sistemas de datos y programas de inteligencia artificial.</li>
-          <li><strong>Importancia:</strong> ayuda a automatizar tareas, analizar información y crear soluciones innovadoras.</li>
+          <li><strong>El Ábaco y las Máquinas Mecánicas:</strong> desde los instrumentos antiguos de cálculo hasta la Pascalina (creada por Blaise Pascal en el siglo XVII) y las calculadoras mecánicas de Gottfried Wilhelm Leibniz, la humanidad buscó reducir el error humano en las operaciones aritméticas básicas.</li>
+          <li><strong>El Telar de Jacquard (1801):</strong> diseñado por Joseph Marie Jacquard, este telar utilizaba tarjetas perforadas para controlar el patrón de tejido. Constituyó el primer antecedente práctico de la entrada de datos programable, demostrando que un mecanismo físico podía cambiar sus instrucciones de operación sin ser reestructurado internamente.</li>
+          <li><strong>Charles Babbage y la Máquina Analítica:</strong> en el siglo XIX, Babbage concibió la Máquina Diferencial y, posteriormente, la Máquina Analítica. Esta última contenía todos los elementos esenciales de un ordenador moderno: una unidad de procesamiento, una memoria, un sistema de entrada por tarjetas perforadas y un mecanismo de salida impreso.</li>
+        </ul>
+
+        <h3 class="topic-subtitle">Los pioneros de la programación y la informática teórica</h3>
+        <ul class="feature-list">
+          <li><strong>Ada Lovelace (1815-1852):</strong> considerada la primera programadora de la historia. Diseñó un algoritmo para calcular los números de Bernoulli y anticipó que las máquinas podían manipular símbolos más allá de los números.</li>
+          <li><strong>Alan Turing (1912-1954):</strong> padre de la computación teórica y la inteligencia artificial.
+            <ul class="feature-sublist">
+              <li><strong>Máquina de Turing (1936):</strong> formalizó algoritmo y computabilidad.</li>
+              <li><strong>Bletchley Park:</strong> lideró el descifrado de Enigma con dispositivos como Bombe.</li>
+              <li><strong>Prueba de Turing:</strong> criterio para evaluar comportamiento inteligente en máquinas.</li>
+            </ul>
+          </li>
+          <li><strong>John von Neumann (1903-1957):</strong> formuló la Arquitectura de Von Neumann, base de las computadoras modernas con memoria compartida para datos e instrucciones.</li>
+          <li><strong>Grace Hopper (1906-1992):</strong> pionera en lenguajes de alto nivel.
+            <ul class="feature-sublist">
+              <li>Desarrolló el primer compilador de la historia (A-0) en 1952.</li>
+              <li>Fue figura clave en la creación de COBOL.</li>
+              <li>Popularizó los términos bug y debugging.</li>
+            </ul>
+          </li>
         </ul>
       </section>
 
-      <section class="content-card reveal feature-panel">
-        <h2 data-icon="🖥️">2. Línea del tiempo de las computadoras</h2>
+      <section class="content-card reveal feature-panel tone-amber flow-right">
+        <h2 data-icon="🖥️">2. Las Generaciones de Computadoras</h2>
+        <figure class="topic-visual">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPUZJ-VWrK9B9JHAVICsNuB7qgivGlZJLQNov1FI-iMsF3Je0RWu7TVD-g&s=10" alt="Evolución del hardware en generaciones" loading="lazy" decoding="async" />
+          <figcaption>Del tubo al vacío al microprocesador moderno.</figcaption>
+        </figure>
         <p>
-          La evolución de las computadoras ha sido una de las transformaciones más importantes de la historia tecnológica. Lo que comenzó como máquinas enormes, lentas y limitadas, se convirtió en equipos compactos, rápidos y conectados en tiempo real con el mundo entero.
+          La evolución del hardware informático se divide tradicionalmente en generaciones caracterizadas por cambios tecnológicos fundamentales en sus componentes electrónicos, con aumentos de velocidad y reducción de tamaño y costos.
         </p>
-        <p>
-          Este avance permitió que la informática pasara de ser exclusiva de grandes centros de investigación a convertirse en una herramienta indispensable para la educación, la medicina, la comunicación y el entretenimiento.
-        </p>
+
+        <h3 class="topic-subtitle">Primera Generación (1940-1956): Tubos al Vacío</h3>
         <ul class="feature-list">
-          <li><strong>1930-1940:</strong> aparecen las primeras máquinas electrónicas y mecánicas destinadas a cálculos complejos.</li>
-          <li><strong>1950-1960:</strong> surgen las primeras computadoras comerciales y los primeros lenguajes de programación modernos.</li>
-          <li><strong>1970-1980:</strong> se popularizan las computadoras personales y los primeros sistemas accesibles para el público.</li>
-          <li><strong>1990-2000:</strong> la web, los sistemas conectados y la informática global se expanden rápidamente.</li>
-          <li><strong>Actualidad:</strong> las computadoras impulsan la inteligencia artificial, la nube, la automatización y los dispositivos inteligentes.</li>
+          <li><strong>Tecnología principal:</strong> tubos de vacío para lógica binaria.</li>
+          <li><strong>Entrada/Salida:</strong> tarjetas perforadas y cintas de papel.</li>
+          <li><strong>Características:</strong> tamaño gigante, alto consumo y fallas frecuentes por calor.</li>
+          <li><strong>Programación:</strong> lenguaje máquina con <span class="badge">0</span> y <span class="badge">1</span>.</li>
+          <li><strong>Ejemplos:</strong> ENIAC, EDVAC, UNIVAC I.</li>
+        </ul>
+
+        <h3 class="topic-subtitle">Segunda Generación (1956-1963): El Transistor</h3>
+        <ul class="feature-list">
+          <li><strong>Tecnología principal:</strong> transistores de estado sólido.</li>
+          <li><strong>Características:</strong> menor tamaño, mayor fiabilidad y menor consumo.</li>
+          <li><strong>Avance clave:</strong> lenguajes de alto nivel como FORTRAN y COBOL.</li>
+          <li><strong>Ejemplos:</strong> IBM 1401, IBM 7090, PDP-1.</li>
+        </ul>
+
+        <h3 class="topic-subtitle">Tercera Generación (1964-1971): Circuitos Integrados</h3>
+        <ul class="feature-list">
+          <li><strong>Tecnología principal:</strong> chips con cientos y miles de transistores.</li>
+          <li><strong>Avance operativo:</strong> primeros sistemas operativos con multiprogramación.</li>
+          <li><strong>Interfaz:</strong> adopción de teclados y monitores.</li>
+          <li><strong>Ejemplos:</strong> IBM System/360, DEC PDP-8.</li>
+        </ul>
+
+        <h3 class="topic-subtitle">Cuarta Generación (1971-1980s): El Microprocesador</h3>
+        <ul class="feature-list">
+          <li><strong>Tecnología principal:</strong> integración LSI y VLSI en un microprocesador.</li>
+          <li><strong>Hito:</strong> Intel 4004 e inicio de la PC.</li>
+          <li><strong>Avances:</strong> GUI, mouse, RAM/ROM, disquetes y discos duros.</li>
+          <li><strong>Ejemplos:</strong> Altair 8800, Apple II, IBM PC, Macintosh.</li>
+        </ul>
+
+        <h3 class="topic-subtitle">Quinta Generación y Era Moderna (1980s-Presente)</h3>
+        <ul class="feature-list">
+          <li><strong>Tecnología principal:</strong> ULSI, procesadores multinúcleo y 64 bits.</li>
+          <li><strong>Avances representativos:</strong> internet global, nube, IoT, móviles e inteligencia artificial.</li>
+          <li><strong>Nuevas fronteras:</strong> computación cuántica basada en qubits.</li>
         </ul>
       </section>
 
-      <section class="content-card reveal feature-panel">
-        <h2 data-icon="⭐">3. Historias destacadas en la programación</h2>
+      <section class="content-card reveal feature-panel tone-violet flow-left">
+        <h2 data-icon="🌐">3. Avances Tecnológicos e Impacto Socioeconómico</h2>
+        <figure class="topic-visual">
+          <img src="https://media.revistagq.com/photos/5eb3ec929be70fabcbaccccf/16:9/w_1280,c_limit/steve-jobs-bill-gates.png" alt="Liderazgo tecnológico y revolución digital" loading="lazy" decoding="async" />
+          <figcaption>La computación personal y su impacto global.</figcaption>
+        </figure>
         <p>
-          La historia de la programación está llena de figuras clave que transformaron la forma en que interactuamos con la tecnología. Ada Lovelace es reconocida por escribir uno de los primeros algoritmos para una máquina, mientras que Alan Turing sentó bases fundamentales para la computación moderna.
+          El desarrollo continuo del hardware y software ha transformado industria, educación, ciencia y relaciones humanas.
         </p>
+
+        <h3 class="topic-subtitle">Principios y leyes de la evolución tecnológica</h3>
+        <ul class="feature-list">
+          <li><strong>Ley de Moore:</strong> el número de transistores por circuito integrado se duplicó aproximadamente cada dos años durante décadas, guiando la industria tecnológica moderna.</li>
+          <li><strong>Convergencia digital:</strong> integración de telecomunicaciones, medios y procesamiento de datos en plataformas unificadas.</li>
+        </ul>
+
+        <h3 class="topic-subtitle">La revolución de la información y las telecomunicaciones</h3>
+        <ul class="feature-list">
+          <li><strong>De la computación aislada a redes globales:</strong> ARPANET y posterior expansión de internet.</li>
+          <li><strong>World Wide Web (1989-1991):</strong> creación de Tim Berners-Lee con estándares HTML, HTTP y URL.</li>
+          <li><strong>Transformación digital:</strong> automatización industrial, banca electrónica, e-commerce y telemedicina.</li>
+        </ul>
+      </section>
+
+      <section class="content-card reveal feature-panel tone-emerald flow-right">
+        <h2 data-icon="⚙️">4. Sistemas Operativos: Conceptos, Evolución y Arquitectura</h2>
+        <figure class="topic-visual">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGU9wLFn2EFpru1I_Hs3jomSKNjtRjFzpQtjPttvpB8ZWmGz7XP9FOfw8&s=10" alt="Arquitectura de sistemas operativos" loading="lazy" decoding="async" />
+          <figcaption>Interfaz entre aplicaciones y hardware físico.</figcaption>
+        </figure>
         <p>
-          También destacan Grace Hopper, pionera en lenguajes de programación, y otros científicos e ingenieros que impulsaron el nacimiento de sistemas operativos, redes y software que hoy forman parte de la vida diaria. Estas historias muestran que la programación no nació de la nada, sino que fue construida poco a poco por personas con visión y creatividad.
+          Un Sistema Operativo (SO) es el software fundamental de un sistema informático. Actúa como capa intermedia de abstracción e interfaz entre el hardware físico y los programas de aplicación.
         </p>
+
+        <pre class="os-diagram">+-------------------------------------------------------+
+|             USUARIO FINAL / APLICACIONES              |
+|         (Navegador, Juegos, Editor de Código)         |
++-------------------------------------------------------+
+                          |
+                          v
++-------------------------------------------------------+
+|                   SISTEMA OPERATIVO                   |
+|  (Gestión de CPU, Memoria, Archivos y Periféricos)    |
++-------------------------------------------------------+
+                          |
+                          v
++-------------------------------------------------------+
+|                   HARDWARE FÍSICO                     |
+|           (CPU, Memoria RAM, Disco, GPU)              |
++-------------------------------------------------------+</pre>
+
+        <h3 class="topic-subtitle">Funciones principales del Sistema Operativo</h3>
+        <ol class="feature-list ordered-list">
+          <li><strong>Gestión de CPU y procesos:</strong> planificación y multitarea, evitando bloqueos.</li>
+          <li><strong>Gestión de memoria RAM:</strong> asignación dinámica y memoria virtual.</li>
+          <li><strong>Gestión de almacenamiento y archivos:</strong> sistemas de ficheros y permisos.</li>
+          <li><strong>Gestión de entrada/salida:</strong> control de periféricos mediante drivers.</li>
+          <li><strong>Seguridad y control de accesos:</strong> autenticación y protección de memoria.</li>
+        </ol>
+
+        <h3 class="topic-subtitle">Evolución histórica de los Sistemas Operativos</h3>
+        <ul class="feature-list">
+          <li><strong>Procesamiento por lotes (1950s):</strong> ejecución secuencial sin interacción en tiempo real.</li>
+          <li><strong>Tiempo compartido y multiprogramación (1960s-1970s):</strong> varios usuarios y tareas concurrentes; nacimiento de UNIX.</li>
+          <li><strong>Sistemas personales y GUI (1980s-1990s):</strong> MS-DOS, luego interfaces gráficas de Apple y Microsoft.</li>
+          <li><strong>Software libre y open source:</strong> Linux (1991) y ecosistema GNU como base de servidores y supercomputación.</li>
+          <li><strong>Sistemas contemporáneos:</strong> GNU/Linux, Windows, macOS, iOS y Android, con fuerte integración en nube.</li>
+        </ul>
       </section>
     </main>
   </div>
@@ -136,43 +243,5 @@
     <p>© <span id="year"></span> Andrés Plazarte</p>
   </footer>
   <script src="script.js"></script>
-  <script>
-    const quizOptions = document.querySelectorAll('.quiz-option');
-    const quizFeedback = document.getElementById('quiz-feedback');
-    const retryButton = document.getElementById('retry-btn');
-
-    function resetQuiz() {
-      quizOptions.forEach((option) => {
-        option.classList.remove('correct', 'wrong');
-        option.disabled = false;
-      });
-      quizFeedback.textContent = 'Elige una respuesta.';
-      quizFeedback.className = 'quiz-feedback';
-      retryButton.classList.add('hidden');
-    }
-
-    quizOptions.forEach((option) => {
-      option.addEventListener('click', () => {
-        const isCorrect = option.dataset.correct === 'true';
-        if (isCorrect) {
-          option.classList.add('correct');
-          quizFeedback.innerHTML = '🎉 EXCELENTE! <br>¡Respuesta correcta!';
-          quizFeedback.classList.add('success');
-          quizOptions.forEach((btn) => btn.disabled = true);
-          retryButton.textContent = 'Volver a intentar';
-          retryButton.classList.remove('hidden');
-        } else {
-          option.classList.add('wrong');
-          quizFeedback.innerHTML = '😞 Muy mal. <br>Inténtalo otra vez.';
-          quizFeedback.classList.add('error');
-          quizOptions.forEach((btn) => btn.disabled = true);
-          retryButton.textContent = 'Intentar otra vez';
-          retryButton.classList.remove('hidden');
-        }
-      });
-    });
-
-    retryButton.addEventListener('click', resetQuiz);
-  </script>
 </body>
 </html>

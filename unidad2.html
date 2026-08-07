@@ -7,7 +7,7 @@
   <title>Unidad 2 - Aplicación</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="unit2-page">
   <div class="background-glow glow-one"></div>
   <div class="background-glow glow-two"></div>
   <div class="page-shell">
@@ -27,17 +27,17 @@
       <nav class="nav" aria-label="Navegación secundaria">
         <a class="nav-link" href="index.html">Inicio</a>
         <a class="nav-link" href="unidad1.html">Unidad 1</a>
-        <a class="nav-link" href="unidad2.html">Unidad 2</a>
+        <a class="nav-link active" href="unidad2.html">Unidad 2</a>
         <a class="nav-link" href="unidad3.html">Unidad 3</a>
       </nav>
     </header>
     <main>
       <section class="hero">
         <div class="hero-content reveal">
-          <p class="eyebrow">Unidad 2 • Aplicación</p>
-          <h1>Poner en práctica lo aprendido</h1>
+          <p class="eyebrow">Unidad 2 • Lógica y Metodología de Desarrollo</p>
+          <h1>De la teoría a la resolución estructurada de problemas</h1>
           <p>
-            Esta unidad se enfoca en llevar los conceptos a situaciones reales, fortaleciendo la comprensión mediante la práctica y la reflexión.
+            En esta etapa se fortalecen las bases lógicas con sistemas de numeración, algoritmos y diagramas de flujo, junto con las fases del ciclo de vida del software.
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="index.html">Volver al inicio</a>
@@ -73,27 +73,174 @@
         </div>
       </section>
 
-      <section class="content-card reveal activity-card">
-        <p class="eyebrow">Dinámica breve</p>
-        <h2>Mini reto de aplicación</h2>
-        <p>Selecciona la opción que mejor representa aplicar un concepto de forma útil:</p>
-        <div class="activity-options" role="group" aria-label="Opciones de respuesta">
-          <button class="activity-option" data-correct="false">Esperar a que alguien lo haga por ti</button>
-          <button class="activity-option" data-correct="true">Resolver un problema con pasos claros</button>
-          <button class="activity-option" data-correct="false">Evitar practicar</button>
-        </div>
-        <p id="activity-feedback-2" class="quiz-feedback">Elige una respuesta.</p>
+      <section class="content-card reveal trivia-hub" data-unit="unidad2">
+        <p class="eyebrow">Juego de trivia</p>
+        <h2>Reto rápido de la Unidad 2</h2>
+        <div class="trivia-game"></div>
       </section>
 
-      <section class="content-card reveal">
-        <h2>Enfoque principal</h2>
+      <section class="content-card reveal feature-panel cavern-panel cavern-panel-cyan flow-left">
+        <h2 data-icon="📘">1. Contexto Histórico y los Pioneros de la Computación</h2>
+        <figure class="topic-visual">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTax_lc0vYZyqKGktXT5zf3BS_qFFt-vcwR0Ki-y-YOavmMyefg9wpbxb7q&s=10" alt="Panorama histórico de la computación" loading="lazy" decoding="async" />
+          <figcaption>Fundamentos históricos para entender la computación moderna.</figcaption>
+        </figure>
         <p>
-          Aquí se consolida el aprendizaje a través de ejercicios, ejemplos y ejercicios de análisis. La idea es que cada concepto se vuelva útil y tangible.
+          La historia de la programación y la informática no comienza con la invención de los chips de silicio o las pantallas digitales, sino con la constante necesidad humana de automatizar cálculos complejos, procesar información y crear mecanismos capaces de ejecutar instrucciones sin intervención manual directa.
         </p>
-        <ul>
-          <li>Aplicación práctica de ideas</li>
-          <li>Desarrollo de habilidades</li>
-          <li>Resolución de problemas</li>
+
+        <h3 class="topic-subtitle">De los orígenes mecánicos a la era del cálculo</h3>
+        <p>
+          Antes de la llegada de la electricidad, los primeros grandes saltos conceptuales surgieron de la mecánica fina y las matemáticas avanzadas.
+        </p>
+        <ul class="feature-list">
+          <li><strong>El Ábaco y las Máquinas Mecánicas:</strong> desde los instrumentos antiguos de cálculo hasta la Pascalina (Blaise Pascal, siglo XVII) y las calculadoras mecánicas de Gottfried Wilhelm Leibniz, la humanidad buscó reducir el error humano en las operaciones aritméticas básicas.</li>
+          <li><strong>El Telar de Jacquard (1801):</strong> diseñado por Joseph Marie Jacquard, utilizó tarjetas perforadas para controlar el patrón de tejido, siendo antecedente práctico de entrada de datos programable.</li>
+          <li><strong>Charles Babbage y la Máquina Analítica:</strong> su diseño incluyó procesamiento, memoria, entrada por tarjetas perforadas y salida impresa, elementos esenciales de un ordenador moderno.</li>
+        </ul>
+
+        <h3 class="topic-subtitle">Los pioneros de la programación y la informática teórica</h3>
+        <ul class="feature-list">
+          <li><strong>Ada Lovelace (1815-1852):</strong> primera programadora de la historia. Diseñó un algoritmo para números de Bernoulli y anticipó que las máquinas podían manipular símbolos además de números.</li>
+          <li><strong>Alan Turing (1912-1954):</strong> padre de la computación teórica y la inteligencia artificial.
+            <ul class="feature-sublist">
+              <li><strong>Máquina de Turing (1936):</strong> formalizó algoritmo y computabilidad.</li>
+              <li><strong>Criptoanálisis en Bletchley Park:</strong> descifrado de Enigma con dispositivos como Bombe.</li>
+              <li><strong>Prueba de Turing:</strong> criterio sobre inteligencia de máquina comparable a la humana.</li>
+            </ul>
+          </li>
+          <li><strong>John von Neumann (1903-1957):</strong> formuló la Arquitectura de Von Neumann basada en memoria compartida para datos e instrucciones.</li>
+          <li><strong>Grace Hopper (1906-1992):</strong> pionera de lenguajes de alto nivel.
+            <ul class="feature-sublist">
+              <li>Desarrolló el primer compilador (A-0) en 1952.</li>
+              <li>Fue clave en la creación de COBOL.</li>
+              <li>Popularizó los términos bug y debugging.</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section class="content-card reveal feature-panel cavern-panel cavern-panel-amber flow-right">
+        <h2 data-icon="🖥️">2. Las Generaciones de Computadoras</h2>
+        <figure class="topic-visual topic-visual-split">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUKzG9CqsC9QnSnHatWE512iaH7_S0YXGOmZtVuEhWYA&s=10" alt="Evolución de computadoras" loading="lazy" decoding="async" />
+          <img src="https://www.shutterstock.com/shutterstock/photos/2472116719/display_1500/stock-photo-number-systems-binary-decimal-octal-hexadecimal-2472116719.jpg" alt="Sistemas numéricos digitales" loading="lazy" decoding="async" />
+          <figcaption>Cambio tecnológico de generaciones y representación numérica.</figcaption>
+        </figure>
+        <p>
+          La evolución del hardware informático se divide en generaciones definidas por cambios tecnológicos en sus componentes, con aumentos de velocidad y disminución de tamaño y costos.
+        </p>
+
+        <h3 class="topic-subtitle">Primera Generación (1940-1956): Tubos al Vacío</h3>
+        <ul class="feature-list">
+          <li><strong>Tecnología principal:</strong> tubos de vacío para circuitos y lógica binaria.</li>
+          <li><strong>Entrada y salida:</strong> tarjetas perforadas y cintas de papel.</li>
+          <li><strong>Características:</strong> equipos gigantescos, alto consumo energético y frecuentes averías por calor.</li>
+          <li><strong>Programación:</strong> lenguaje máquina en binario <span class="badge">0</span> y <span class="badge">1</span>.</li>
+          <li><strong>Ejemplos históricos:</strong> ENIAC, EDVAC, UNIVAC I.</li>
+        </ul>
+
+        <h3 class="topic-subtitle">Segunda Generación (1956-1963): El Transistor</h3>
+        <ul class="feature-list">
+          <li><strong>Tecnología principal:</strong> transistores de estado sólido.</li>
+          <li><strong>Almacenamiento:</strong> núcleos magnéticos de ferrita y cintas/discos magnéticos.</li>
+          <li><strong>Características:</strong> reducción de tamaño y calor; mayor fiabilidad y velocidad.</li>
+          <li><strong>Avance clave:</strong> lenguajes de alto nivel como FORTRAN y COBOL.</li>
+          <li><strong>Ejemplos históricos:</strong> IBM 1401, IBM 7090, PDP-1.</li>
+        </ul>
+
+        <h3 class="topic-subtitle">Tercera Generación (1964-1971): Circuitos Integrados</h3>
+        <ul class="feature-list">
+          <li><strong>Tecnología principal:</strong> circuito integrado (chip) con miniaturización de transistores.</li>
+          <li><strong>Avances operativos:</strong> primeros sistemas operativos con multiprogramación y tiempo compartido.</li>
+          <li><strong>Interfaz de usuario:</strong> teclados y monitores reemplazan tarjetas perforadas.</li>
+          <li><strong>Ejemplos históricos:</strong> IBM System/360, DEC PDP-8.</li>
+        </ul>
+
+        <h3 class="topic-subtitle">Cuarta Generación (1971-1980s): El Microprocesador</h3>
+        <ul class="feature-list">
+          <li><strong>Tecnología principal:</strong> integración LSI y VLSI, millones de transistores en un chip.</li>
+          <li><strong>Nacimiento de la PC:</strong> Intel 4004 (1971) y masificación en hogares y oficinas.</li>
+          <li><strong>Avances:</strong> mouse, GUI, RAM/ROM, disquetes y discos duros.</li>
+          <li><strong>Ejemplos históricos:</strong> Altair 8800, Apple II, IBM PC, Macintosh.</li>
+        </ul>
+
+        <h3 class="topic-subtitle">Quinta Generación y Era Moderna (1980s-Presente)</h3>
+        <ul class="feature-list">
+          <li><strong>Tecnología principal:</strong> ULSI, procesadores multinúcleo, 64 bits y memoria ultrarrápida.</li>
+          <li><strong>Avances representativos:</strong> internet, web, IoT, móviles, IA y cloud computing.</li>
+          <li><strong>Nuevas fronteras:</strong> computación cuántica con qubits y superposición.</li>
+        </ul>
+      </section>
+
+      <section class="content-card reveal feature-panel cavern-panel cavern-panel-violet flow-left">
+        <h2 data-icon="🌐">3. Avances Tecnológicos e Impacto Socioeconómico</h2>
+        <figure class="topic-visual topic-visual-split">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiUt67nqQ6aSUOGtLUzNoFDpZWTPtbOpjevMVOAFRpYA&s=10" alt="Impacto tecnológico" loading="lazy" decoding="async" />
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwp4ffMqmmNN6_khbm5IksuFmcqRta3dAo7dj5CehRVg&s=10" alt="Transformación digital" loading="lazy" decoding="async" />
+          <figcaption>La tecnología como motor social, educativo y económico.</figcaption>
+        </figure>
+        <p>
+          El desarrollo de hardware y software ha transformado industria, educación, ciencia y relaciones humanas.
+        </p>
+
+        <h3 class="topic-subtitle">Principios y leyes de la evolución tecnológica</h3>
+        <ul class="feature-list">
+          <li><strong>Ley de Moore:</strong> duplicación aproximada de transistores cada dos años, con mayor rendimiento y menor costo relativo durante décadas.</li>
+          <li><strong>Convergencia digital:</strong> integración de telecomunicaciones, medios y datos en plataformas unificadas.</li>
+        </ul>
+
+        <h3 class="topic-subtitle">La revolución de la información y las telecomunicaciones</h3>
+        <ul class="feature-list">
+          <li><strong>De la computación aislada a las redes globales:</strong> ARPANET y el protocolo TCP/IP.</li>
+          <li><strong>World Wide Web (1989-1991):</strong> propuesta de Tim Berners-Lee con HTML, HTTP y URL.</li>
+          <li><strong>Transformación digital global:</strong> automatización, banca electrónica, e-commerce, telemedicina y colaboración en línea.</li>
+        </ul>
+      </section>
+
+      <section class="content-card reveal feature-panel cavern-panel cavern-panel-emerald flow-right">
+        <h2 data-icon="⚙️">4. Sistemas Operativos: Conceptos, Evolución y Arquitectura</h2>
+        <figure class="topic-visual">
+          <img src="https://static.wixstatic.com/media/cae29b_605ea6fe171145e18a417e5965172462~mv2.webp/v1/fill/w_519,h_541,al_c,lg_1,q_80,enc_avif,quality_auto/cae29b_605ea6fe171145e18a417e5965172462~mv2.webp" alt="Diagrama de flujo y arquitectura lógica" loading="lazy" decoding="async" />
+          <figcaption>Relación entre capas del sistema operativo y ejecución de procesos.</figcaption>
+        </figure>
+        <p>
+          Un Sistema Operativo (SO) es el software fundamental de un sistema informático. Actúa como capa de abstracción entre hardware y aplicaciones de usuario.
+        </p>
+
+        <pre class="os-diagram">+-------------------------------------------------------+
+|             USUARIO FINAL / APLICACIONES              |
+|         (Navegador, Juegos, Editor de Código)         |
++-------------------------------------------------------+
+                          |
+                          v
++-------------------------------------------------------+
+|                   SISTEMA OPERATIVO                   |
+|  (Gestión de CPU, Memoria, Archivos y Periféricos)    |
++-------------------------------------------------------+
+                          |
+                          v
++-------------------------------------------------------+
+|                   HARDWARE FÍSICO                     |
+|           (CPU, Memoria RAM, Disco, GPU)              |
++-------------------------------------------------------+</pre>
+
+        <h3 class="topic-subtitle">Funciones principales del Sistema Operativo</h3>
+        <ol class="feature-list ordered-list">
+          <li><strong>Gestión de CPU y procesos:</strong> planificación de ejecución, prioridades y prevención de bloqueos.</li>
+          <li><strong>Gestión de memoria RAM:</strong> asignación/liberación dinámica y memoria virtual.</li>
+          <li><strong>Gestión de archivos:</strong> organización en sistemas de ficheros con permisos de acceso.</li>
+          <li><strong>Gestión de entrada/salida:</strong> control de periféricos mediante drivers.</li>
+          <li><strong>Seguridad y control:</strong> autenticación y aislamiento de procesos con protección del kernel.</li>
+        </ol>
+
+        <h3 class="topic-subtitle">Evolución histórica de los Sistemas Operativos</h3>
+        <ul class="feature-list">
+          <li><strong>Procesamiento por lotes (1950s):</strong> ejecución secuencial de tarjetas perforadas.</li>
+          <li><strong>Tiempo compartido y multiprogramación (1960s-1970s):</strong> interacción multiusuario; creación de UNIX.</li>
+          <li><strong>Sistemas personales y GUI (1980s-1990s):</strong> expansión de MS-DOS y entornos gráficos en Apple y Microsoft.</li>
+          <li><strong>Movimiento open source:</strong> Linux y GNU como base robusta y flexible para múltiples entornos.</li>
+          <li><strong>Sistemas contemporáneos:</strong> GNU/Linux, Windows, macOS, iOS y Android en arquitecturas modernas y nube.</li>
         </ul>
       </section>
     </main>
