@@ -596,20 +596,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const lastPanel = contentPanels[contentPanels.length - 1];
     const unlockObserver = new IntersectionObserver((entries) => {
+      let shouldUnlock = false;
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          hub.classList.remove("trivia-locked");
-          hub.classList.add("trivia-unlocked");
-
-          const banner = document.createElement("div");
-          banner.className = "trivia-unlock-banner";
-          banner.innerHTML = `<span aria-hidden="true">🎉</span> ¡Contenido completado! La trivia está desbloqueada.`;
-          const triviaGame = hub.querySelector(".trivia-game");
-          if (triviaGame) triviaGame.before(banner);
-
-          unlockObserver.disconnect();
-        }
+        if (entry.isIntersecting) shouldUnlock = true;
       });
+      if (!shouldUnlock || hub.classList.contains("trivia-unlocked")) return;
+
+      hub.classList.remove("trivia-locked");
+      hub.classList.add("trivia-unlocked");
+
+      const banner = document.createElement("div");
+      banner.className = "trivia-unlock-banner";
+      banner.innerHTML = `<span aria-hidden="true">🎉</span> ¡Contenido completado! La trivia está desbloqueada.`;
+      const triviaGame = hub.querySelector(".trivia-game");
+      if (triviaGame) triviaGame.before(banner);
+
+      unlockObserver.disconnect();
     }, { threshold: 0.5 });
 
     unlockObserver.observe(lastPanel);
