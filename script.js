@@ -23,6 +23,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const siteSettings = {
     soundEnabled: loadSettings().soundEnabled ?? true
   };
+  const scriptTag = document.querySelector('script[src$="script.js"]');
+  const scriptSrc = scriptTag?.getAttribute("src");
+  let siteBasePath = "";
+  if (/(^|\.)github\.io$/i.test(window.location.hostname)) {
+    const [repoSlug] = window.location.pathname.split("/").filter(Boolean);
+    siteBasePath = repoSlug ? `/${repoSlug}` : "";
+  } else if (scriptSrc) {
+    const scriptUrl = new URL(scriptSrc, document.baseURI);
+    const scriptDir = scriptUrl.pathname.replace(/\/[^/]*$/, "");
+    siteBasePath = scriptDir === "/" ? "" : scriptDir;
+  }
+  const withBasePath = (route) => {
+    const cleanRoute = route.replace(/^\/+/, "");
+    return siteBasePath ? `${siteBasePath}/${cleanRoute}` : `/${cleanRoute}`;
+  };
 
   const playSuccessTone = () => {
     if (!siteSettings.soundEnabled) return;
@@ -644,7 +659,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const apiInfo = document.getElementById("api-info");
   if (apiInfo) {
-    fetch("/api/info")
+    fetch(withBasePath("api/info"))
       .then((response) => response.json())
       .then((data) => {
         const activity = data?.data?.activity || "Explorar nuevas ideas";
@@ -736,17 +751,22 @@ document.addEventListener("DOMContentLoaded", () => {
       formMessage.textContent = "Enviando...";
       formMessage.style.color = "#f59e0b";
 
-      const response = await fetch("/contacto", {
-        method: "POST",
-        body: new URLSearchParams(formData)
-      });
+      try {
+        const response = await fetch(withBasePath("contacto"), {
+          method: "POST",
+          body: new URLSearchParams(formData)
+        });
 
-      const text = await response.text();
-      formMessage.textContent = text;
-      formMessage.style.color = response.ok ? "#86efac" : "#fda4af";
+        const text = await response.text();
+        formMessage.textContent = text;
+        formMessage.style.color = response.ok ? "#86efac" : "#fda4af";
 
-      if (response.ok) {
-        form.reset();
+        if (response.ok) {
+          form.reset();
+        }
+      } catch {
+        formMessage.textContent = "No se pudo enviar el mensaje. Inténtalo nuevamente más tarde.";
+        formMessage.style.color = "#fda4af";
       }
     });
   }
