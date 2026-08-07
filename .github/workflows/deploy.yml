@@ -17,6 +17,10 @@ concurrency:
 
 jobs:
   deploy:
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -31,14 +35,47 @@ jobs:
       - name: Set Pages source to GitHub Actions
         env:
           GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch || 'main' }}
         run: |
-          curl --fail-with-body --silent --show-error \
+          set -euo pipefail
+
+          api_url="https://api.github.com/repos/$REPO/pages"
+          patch_response=$(mktemp)
+          create_response=$(mktemp)
+          trap 'rm -f "$patch_response" "$create_response"' EXIT
+          patch_status=$(curl --output "$patch_response" --write-out "%{http_code}" --silent --show-error \
             -X PATCH \
             -H "Authorization: Bearer $GH_TOKEN" \
             -H "Accept: application/vnd.github+json" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
-            "https://api.github.com/repos/${{ github.repository }}/pages" \
-            -d '{"source":{"type":"workflow"}}'
+            "$api_url" \
+            -d '{"build_type":"workflow"}')
+
+          if [[ "$patch_status" =~ ^2 ]]; then
+            exit 0
+          fi
+
+          if [ "$patch_status" = "404" ]; then
+            create_payload=$(jq -n --arg branch "$DEFAULT_BRANCH" '{build_type: "workflow", source: {branch: $branch, path: "/"}}')
+            create_status=$(curl --output "$create_response" --write-out "%{http_code}" --silent --show-error \
+              -X POST \
+              -H "Authorization: Bearer $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              -H "X-GitHub-Api-Version: 2022-11-28" \
+              "$api_url" \
+              -d "$create_payload")
+
+            if [[ "$create_status" =~ ^2 ]]; then
+              exit 0
+            fi
+
+            cat "$create_response"
+            exit 1
+          fi
+
+          cat "$patch_response"
+          exit 1
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
